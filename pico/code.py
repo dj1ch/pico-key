@@ -1,0 +1,1 @@
+# this is the code for the pico. this requires circuitpython 8.29(latest version)

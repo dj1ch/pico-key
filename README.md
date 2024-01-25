@@ -1,6 +1,9 @@
 # pico-key
 A POC using python and circuitpython to exploit a target machine, with a keylogger and a server written in python. 
 
+### Development progress
+This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far.
+
 ### Install guide
 TBA
 

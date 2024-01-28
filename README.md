@@ -5,10 +5,10 @@ A POC using python and circuitpython to exploit a target machine, with a keylogg
 This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far.
 
 ### Install guide
-TBA
+TBA, I don't plan on making an install guide until everything is set up. 
 
 ### The attack: explained
-This simple keystroke injection is complex, starting with one thing, the Raspberry Pi Pico. This is just how I plan for it to work, this may not be 100% possible but it will by the time development is done. 
+This simple keystroke injection is complex, starting with one thing, the Raspberry Pi Pico. This is just how I plan for it to work, this may not be 100% possible but it will by the time development is done.
 
 1. First, the Pico is plugged into the target device. The first thing it does is do the keystroke injection attack on the computer. It downloads the *[server.py](/victim/server.py)* and installs python. It then runs that server.py file. 
 
@@ -30,6 +30,6 @@ This should return the output that will show the machine IP and hostname most li
 TBA 
 
 ### Contributing
-TBA
+TBA, will add contributing guidelines soon
 
 **Made with :heart: from [@dj1ch](https://github.com/dj1ch)**

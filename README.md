@@ -24,7 +24,9 @@ This should return the output that will show the machine IP and hostname most li
 
 3. The file just ran by python on the target machine will start a server on a specific IP address(will add later) on the local network. Hopefully, you have access to this network, as this will help create an SSH(Secure Shell) server on the target machine. 
 
-4. If you have that IP address, you will have remote access to the machine. From here, do what you want with the target machine. 
+4. If you have that IP address, you will have remote access to the machine. From here, do what you want with the target machine.
+
+**Before asking to install, this is merely a blueprint for what I will be working on for the next couple weeks!**
 
 ### FAQ
 TBA 

@@ -1,5 +1,5 @@
-# pico-key
-A POC using python and circuitpython to exploit a target machine.
+# pico key
+A POC using python and circuitpython to exploit a target machine. This is just a bare repository which I plan on changing over time. 
 
 ### Development progress
 This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far.

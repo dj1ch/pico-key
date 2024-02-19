@@ -2,7 +2,7 @@
 A POC using python and circuitpython to exploit a target machine. This is just a bare repository which I plan on changing over time. 
 
 ### Development progress
-This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far.
+This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far. I am going to restart this project from scratch as I figure out what to do. Most of my ideas for this project have been used for other ones. 
 
 ### Install guide
 TBA, I don't plan on making an install guide until everything is set up. 

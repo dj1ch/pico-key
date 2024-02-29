@@ -7,3 +7,6 @@ import commands
 
 def main():
     shell.main()
+
+if "__name__" == "__main__":
+    main()

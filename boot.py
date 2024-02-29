@@ -3,6 +3,9 @@
 # boot.py: bootup
 
 import time
+import microcontroller
+import board
+import gc
 
 coolArt = """
 ███████████████████████████████████████████████
@@ -31,10 +34,13 @@ def load(loops):
             time.sleep(0.5)
             print("\r" + " " * len("Starting" + dot), end="")
      
-
+# as of right now it only prints temp and memory available
 def info():
     print("\nBoard info: ")
-    # print board info
+    temp = microcontroller.cpu.temperature
+    print(temp + " Celsius")
+    mem = gc.mem_free()
+    print(mem)
 
 def startup(): 
     print(coolArt)
@@ -42,4 +48,5 @@ def startup():
     print(author)
 
 # run 
-bootup()
+if "__name__" == "__bootup__":
+    bootup()

@@ -1,5 +1,5 @@
 # pico key
-A pentesting toolkit on a regular Raspberry Pi Pico.
+A physical pentesting toolkit on a regular Raspberry Pi Pico. 
 
 ### Intro
 The Raspberry Pi Pico is a flexible microcontroller board designed for multiple purposes. With this project I intend to use make a powerful Keystroke Injection tool for such an intricate board with a special purpose. It is designed to be easy to configure, modify, and use for fun. This will be designed to be a little more than a *Bad USB*.

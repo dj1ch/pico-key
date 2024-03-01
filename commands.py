@@ -62,6 +62,7 @@ def mouse(command):
     elif action == 'MIDDLE_CLICK':
         mse.click(mse.MIDDLE_BUTTON)
 
+# shortest compiler ever...
 def run():
     if command.upper() in commands:
         cmd = commands[command.upper()]
@@ -70,4 +71,3 @@ def run():
             kbd.release_all()
         elif isinstance(action, dict):
             mouse(cmd)
-

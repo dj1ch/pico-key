@@ -6,6 +6,7 @@ import shell
 import commands
 
 def main():
+    # literally everything is handled in the shell
     shell.main()
 
 if "__name__" == "__main__":

@@ -8,6 +8,9 @@ The Raspberry Pi Pico is a flexible microcontroller board designed for multiple 
 This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far. I am going to restart this project from scratch as I figure out what to do. Most of my ideas for this project have been used for other ones. 
 
 ### Install guide
+
+**Note: You need to install the latest (stable) version of Circuitpython for this to work.**
+
 TBA, I don't plan on making an install guide until everything is set up. 
 
 ### The attack: explained

@@ -23,15 +23,23 @@ def main():
             with open(f"{file}", "a") as f:
                 print(f"{file} accessed successfully!")
                 # as of right now, we can only write three lines
-                code = input("\n1 > ")
+                code_a = input("\n1 > ")
                 time.sleep(1)
-                f.write(f"{code}")
-                codea = input("\n2 > ")
+                f.write(f"{code_a}")
+                code_b = input("\n2 > ")
                 time.sleep(1)
-                f.write(f"{codea}")
-                codeb = input("\n3 > ")
+                f.write(f"{code_b}")
+                code_c = input("\n3 > ")
                 time.sleep(1)
-                f.write(f"{codeb}")
+                f.write(f"{code_c}")
+                
+                # exits and returns to home screen in case if you type "exit"
+                if code_a.upper() == "EXIT":
+                    main()
+                elif code_b.upper() == "EXIT":
+                    main()
+                elif code_c.upper() == "EXIT":
+                    main()
 
                 print("\nSuccessfully built Bad USB script!")
                 print(f + ": ")
@@ -45,18 +53,18 @@ def main():
     elif choice == 2:
         print("\n1. Turn on LED")
         print("2. Turn off LED")
-        choiceb = input("\n> ")
-        if choiceb == 1:
+        choice_b = input("\n> ")
+        if choice_b == 1:
             led.value = True
-        elif choiceb == 2:
+        elif choice_b == 2:
             led.value = False
         else: 
-            print(f"{choiceb}: Command not found")
+            print(f"{choice_b}: Command not found")
 
     elif choice == 3:
         print("\n1. Board Info")
-        choicec = input("\n>")
-        if choicec == 1:
+        choice_c = input("\n>")
+        if choice_c == 1:
             info()
         else: 
-            print(f"{choicec}: Command not found")
+            print(f"{choice_c}: Command not found")

@@ -48,5 +48,5 @@ def startup():
     print(author)
 
 # run 
-if "__name__" == "__bootup__":
+if __name__ == "__bootup__":
     bootup()

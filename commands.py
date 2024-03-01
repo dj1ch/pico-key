@@ -5,6 +5,7 @@
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.mse import Mouse
+import shell
 
 # instances
 mse = Mouse(usb_hid.devices)
@@ -63,7 +64,7 @@ def mouse(command):
         mse.click(mse.MIDDLE_BUTTON)
 
 # shortest compiler ever...
-def run():
+def run(command, action):
     if command.upper() in commands:
         cmd = commands[command.upper()]
         if isinstance(action, Keycode):
@@ -71,3 +72,15 @@ def run():
             kbd.release_all()
         elif isinstance(action, dict):
             mouse(cmd)
+
+def read_line(file_path):
+    try: 
+        with open(file_path, 'r') as p:
+            for line in p:
+                line = line.strip()
+                command, action = line.split()
+                run(command, action)
+    except FileNotFoundError:
+        print("File not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")

@@ -9,5 +9,5 @@ def main():
     # literally everything is handled in the shell
     shell.main()
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     main()

@@ -14,6 +14,7 @@ def main():
     print("\n1. Bad USB")
     print("2. Misc")
     print("3. Options")
+    time.sleep(1)
     choice = input("\n> ")
 
     if choice == 1:
@@ -23,12 +24,20 @@ def main():
                 print(f"{file} accessed successfully!")
                 # as of right now, we can only write three lines
                 code = input("\n1 > ")
-                codea = input("\n2 > ")
-                codeb = input("\n3 > ")
-
+                time.sleep(1)
                 f.write(f"{code}")
+                codea = input("\n2 > ")
+                time.sleep(1)
                 f.write(f"{codea}")
+                codeb = input("\n3 > ")
+                time.sleep(1)
                 f.write(f"{codeb}")
+
+                print("\nSuccessfully built Bad USB script!")
+                print(f + ": ")
+                time.sleep(1)
+                print(f.read())
+
         except OSError as e:
             if e.args[0] == 28:
                 print("Filesystem full!")

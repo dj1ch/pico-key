@@ -8,20 +8,24 @@ import digitalio
 from boot import info
 import commands
 
+# led
 led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
 
 def main():
     while True:
-        print("\n1. Bad USB")
+        print("\n1. Build Bad USB script")
         print("2. Test Bad USB script")
-        print("3. Misc")
-        print("4. Options")
+        print("3. Fake USB drive")
+        print("4. Misc")
+        print("5. Options")
         time.sleep(1)
-        choice = input("\n> ")
+        choice = int(input("\n> "))
 
         if choice == 1:
-            file = input("Payload file name? > ")
+            print("\nPayloads are built here, but can also be modified using a file manager.")
+            print("Type 'exit' to exit to the main menu.")
+            file = input("\nPayload file name? > ")
             try:
                 with open(f"{file}", "a") as f:
                     print(f"{file} accessed successfully!")
@@ -45,7 +49,7 @@ def main():
                         main()
 
                     print("\nSuccessfully built Bad USB script!")
-                    print(f + ": ")
+                    print(file + ": ")
                     time.sleep(1)
                     print(f.read())
 
@@ -59,7 +63,7 @@ def main():
 
         elif choice == 2:
             print("\nRemember that testing the script will run this on your machine!")
-            user_warning = input("Are you okay with this? Y/N > ")
+            user_warning = input("Are you okay with this? (Y/N) > ")
             if user_warning.upper() == "Y":
                 continue
             elif user_warning.upper() == "N":
@@ -67,27 +71,41 @@ def main():
             else: 
                 print(f"{user_warning}: Not a response")
     
-            file_path = input("Script to test? > ")  
-            commands.read_line(file_path)
-
+            file_path = input("Script to test? > ")
+            if file_path.upper() == "EXIT":
+                break
+            else: 
+                commands.read_line(file_path)
+        
         elif choice == 3:
+            print("\nEssentially, all this does is blink the Pico to make it seem like a USB drive in case you were in public. Usually it blinks if you're writing data or viewing files.")
+            print("\n1. Start LED blinking")
+            print("2. Stop LED blinking")
+
+        elif choice == 4:
+            print("\nMostly random things are put here, if there are features that are pretty much useless I put them here.")
             print("\n1. Turn on LED")
             print("2. Turn off LED")
             choice_b = input("\n> ")
-            if choice_b == 1:
+            if choice_b == "1":
                 led.value = True
-            elif choice_b == 2:
+            elif choice_b == "2":
                 led.value = False
+            elif choice_b.upper() == "EXIT":
+                break
             else: 
                 print(f"{choice_b}: Command not found")
 
-        elif choice == 4:
+        elif choice == 5:
+            print("\nHere we would put settings to set for the board, see the current board information, etc.")
             print("\n1. Board Info")
-            choice_c = input("\n>")
-            if choice_c == 1:
+            choice_c = input("\n> ")
+            if choice_c == "1":
                 info()
+            elif choice_c.upper() == "EXIT":
+                break
             else: 
                 print(f"{choice_c}: Command not found")
 
-def file():
-    return file
+def file_path():
+    return file_path

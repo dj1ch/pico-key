@@ -14,7 +14,13 @@ This [project](https://github.com/users/dj1ch/projects/3) showcases my progress 
 TBA, I don't plan on making an install guide until everything is set up. 
 
 ### The attack: explained
-Might change how it works soon.
+Unlike your usual *Bad USB*, the setup is a lot more complex. 
+
+1. When it boots up, it checks your `config.py` to determine whether or not it will run the duckyscript on startup. Regardless if set to `True` or `False`, it will not run if there is nothing in the `payload.dd`, the default payload.
+
+2. If not running the payload, it will open the shell, which allows you to edit payloads, test payloads, control GPIO, etc
+
+3. Your config must be edited to allow the script to be run on startup after editing it, using the shell or your computer.
 
 **Before asking to install, this is merely a blueprint for what I will be working on for the next couple weeks!**
 

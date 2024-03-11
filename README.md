@@ -14,12 +14,27 @@ This [project](https://github.com/users/dj1ch/projects/3) showcases my progress 
 TBA, I don't plan on making an install guide until everything is set up. 
 
 ### The attack: explained
-Might change how it works soon.
+Unlike your usual *Bad USB*, the setup is a lot more complex. 
+
+1. When it boots up, it checks your `config.py` to determine whether or not it will run the duckyscript on startup. Regardless if set to `True` or `False`, it will not run if there is nothing in the `payload.dd`, the default payload.
+
+2. If not running the payload, it will open the shell, which allows you to edit payloads, test payloads, control GPIO, etc
+
+3. Your config must be edited to allow the script to be run on startup after editing it, using the shell or your computer.
 
 **Before asking to install, this is merely a blueprint for what I will be working on for the next couple weeks!**
 
+### The shell
+
+The shell allows you to do a fair share of things with the board, allowing you to make it look like a USB drive by blinking the LED, checking board stats, and the testing of payloads.
+
 ### FAQ
-TBA 
+
+**How long will it be until a release?**
+Most of the changes haven't been tested and it is yet to work as intended. This might take a while depending on how long it will take to implement the wanted features.
+
+**Can it do things other than Keystroke injection?**
+It's pretty bare bones right now, it has a work in progress text editor, to build the scripts on the board wihtout having to worry about editing the files on your own computer, along with being able to test scripts on the device it is plugged into. Unless we can implement some way to control GPIO over the shell, it does only keystroke injection.
 
 ### Contributing
 TBA, will add contributing guidelines soon

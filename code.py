@@ -22,5 +22,4 @@ def main():
             else:
                 commands.read_line(payload_file)
 
-if __name__ == "__main__":
-    main()
+main()

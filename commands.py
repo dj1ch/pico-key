@@ -4,17 +4,15 @@
 
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.mse import Mouse
+from adafruit_hid.mouse import Mouse
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS as KeyboardLayout
+from adafruit_hid.keycode import Keycode
 import shell
 
 # instances
 mse = Mouse(usb_hid.devices)
 kbd = Keyboard(usb_hid.devices)
 layout = KeyboardLayout(kbd)
-
-# us keyboard layout:
-from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS as KeyboardLayout
-from adafruit_hid.keycode import Keycode
 
 # other layouts:
 # replace <language> with your keyboard layout

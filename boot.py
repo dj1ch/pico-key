@@ -49,5 +49,5 @@ def startup():
     time.sleep(1)
     print(author)
 
-# run 
+# run bootup
 bootup()

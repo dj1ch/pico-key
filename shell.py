@@ -53,13 +53,17 @@ def main():
                     time.sleep(1)
                     print(f.read())
 
+            # errors
             except OSError as e:
                 if e.args[0] == 28:
                     print("Filesystem full!")
+                    print("\nCannot build Bad USB script! :(")
             except FileNotFoundError:
                 print("File not found.")
+                print("\nCannot build Bad USB script! :(")
             except Exception as ex:
                 print(f"An error occurred: {ex}")
+                print("\nCannot build Bad USB script! :(")
 
         elif choice == 2:
             print("\nRemember that testing the script will run this on your machine!")

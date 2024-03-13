@@ -85,7 +85,16 @@ def main():
             print("\nEssentially, all this does is blink the Pico to make it seem like a USB drive in case you were in public. Usually it blinks if you're writing data or viewing files.")
             print("\n1. Start LED blinking")
             print("2. Stop LED blinking")
-
+            choice_a = input("\n>")
+            if choice_a == "1":
+                led_blink()
+            elif choice_a == "2":
+                led_stop()
+            elif choice_a.upper() == "EXIT":
+                break
+            else:
+                print(f"{choice_a}: Command not found")
+            
         elif choice == 4:
             print("\nMostly random things are put here, if there are features that are pretty much useless I put them here.")
             print("\n1. Turn on LED")
@@ -113,3 +122,18 @@ def main():
 
 def file_path():
     return file_path
+
+def led_blink():
+    print("\nBlinking started!")
+    main()
+    while True:
+        led.value = True
+        time.sleep(0.5)
+        led.value = False
+        time.sleep(0.5)
+
+def led_stop(): 
+    print("\nBlinking stopped!")
+    main()
+    while True: 
+        led.value = False

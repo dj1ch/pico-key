@@ -31,12 +31,14 @@ The shell allows you to do a fair share of things with the board, allowing you t
 ### FAQ
 
 **How long will it be until a release?**
-Most of the changes haven't been tested and it is yet to work as intended. This might take a while depending on how long it will take to implement the wanted features.
+
+Most of the changes haven't been tested and it is yet to work as intended. This might take a while depending on how long it will take to implement the wanted feature(s).
 
 **Can it do things other than Keystroke injection?**
-It's pretty bare bones right now, it has a work in progress text editor, to build the scripts on the board wihtout having to worry about editing the files on your own computer, along with being able to test scripts on the device it is plugged into. Unless we can implement some way to control GPIO over the shell, it does only keystroke injection.
+
+It's pretty bare bones right now, it has a work in progress text editor, to build the scripts on the board without having to worry about editing the files on your own computer, along with being able to test scripts on the device it is plugged into. Unless we can implement some way to control GPIO over the shell, it does only keystroke injection.
 
 ### Contributing
 TBA, will add contributing guidelines soon
 
-**Made with :heart: from [@dj1ch](https://github.com/dj1ch)**
+**Made with :heart: by [@dj1ch](https://github.com/dj1ch)**

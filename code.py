@@ -22,4 +22,5 @@ def main():
             else:
                 commands.read_line(payload_file)
 
+# run full program essentially
 main()

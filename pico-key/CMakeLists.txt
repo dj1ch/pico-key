@@ -14,15 +14,17 @@ project(pico-key)
 pico_sdk_init()
 
 # source
-add_executable(${PROJECT_NAME}
+add_executable(pico-key
     pico-key.c
 )
 
 # pico sdk libraries
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(pico-key
     pico_stdlib
+    pico_malloc
     hardware_uart
     hardware_gpio
 )
 
-pico_add_extra_outputs(${PROJECT_NAME})
+# generate extra files
+pico_add_extra_outputs(pico-key)

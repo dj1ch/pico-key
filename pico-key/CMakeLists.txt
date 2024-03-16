@@ -21,6 +21,8 @@ add_executable(${PROJECT_NAME}
 # pico sdk libraries
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
+    hardware_uart
+    hardware_gpio
 )
 
 pico_add_extra_outputs(${PROJECT_NAME})

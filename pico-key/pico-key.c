@@ -4,7 +4,17 @@
  * licensed under GPL 3.0
  * 
  * built by @dj1ch
+ * 
  */
+
+/** developer note:
+ * 
+ * old pr w/ python is here: https://github.com/dj1ch/pico-key/pull/1/commits/5d4c65106c6aa490b7eb047827c1ed3a00a21377
+ * 
+*/
+
+// config
+#include "config.h"
 
 // libraries
 #include <stdio.h>
@@ -42,16 +52,14 @@ void boot() {
     sleep(1);
     printf("%s\n", author);
 
-    // print memory, cpu freq, etc
-    void* ptr = malloc(10 * sizeof(char));
+    // memory 
+    malloc_stats();
 
-    if (ptr != NULL) {
-        // print stats
-        malloc_stats();
-
-        free(ptr);
+    if (RUN_ON_STARTUP) {
+        read();
+        return 0;
     } else {
-        printf("\nMemory allocation failed :(\n");
+        // do nothing
     }
 }
 
@@ -98,9 +106,43 @@ int main() {
     return 0;
 }
 
-// tba
 void buildScript() {
-    
+    printf("\nPayloads are built here, but can also be modified using a file manager.");
+    printf("Every time you press enter it will be written to the file.\n");
+    printf("Type 'exit' to stop.\n");
+
+    // assume it's named payload.dd
+    FILE *file = fopen(PAYLOAD_LOCATION, "w");
+
+    if (file == NULL) {
+        printf("Failed to open payload.dd! :(\n");
+        return;
+    }
+
+    // 25 chars max!! most of the time commands are shorter.
+    const int MAX_LINE_LENGTH = 25;
+    char script[MAX_LINE_LENGTH];
+
+    while (true) {
+        printf("\n> ");
+        // get line and write it
+        fgets(script, sizeof(script), stdin);
+        script[strcspn(script, "\n")] = '\0';
+
+        for (int i = 0; script[i]; i++) {
+            script[i] = toupper(script[i]);
+        }
+
+        // exit if command is "exit"
+        if (strcmp(script, "EXIT") == 0) {
+            break;
+        }
+
+        fprintf(file, "%s\n", script);
+
+    }
+    fclose(file);
+    printf("Script saved to payload.dd!\n");
 }
 
 void testScript() {
@@ -124,7 +166,7 @@ void fakeUSB() {
     switch (choiceA) {
         case 1:
             if (led) {
-                printf("Already running!\n");
+                printf("Already running! :/\n");
             } else {
                 led = true;
                 while (led) {
@@ -148,7 +190,6 @@ void fakeUSB() {
             printf("%d: Invalid choice\n", choiceA);
     }
 }
-
 
 void misc() {
     printf("\nNothing here, for now... :/\n");

@@ -38,6 +38,7 @@ def load(loops):
 # as of right now it only prints temp and memory available
 def info():
     print("\nBoard info: ")
+    print(" ")
     print("Version: " + config.check_version())
     temp = microcontroller.cpu.temperature
     temp_str = str(temp)
@@ -45,6 +46,7 @@ def info():
     mem = gc.mem_free()
     mem_str = str(mem)
     print("Memory: " + mem_str + " Bytes Free")
+    print(" ")
 
 def startup(): 
     print(coolArt)

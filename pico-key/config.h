@@ -1,8 +1,6 @@
 /** 
  * config.h
- * 
  * configurations are defined here
- * 
 */
 
 #ifndef CONFIG_H

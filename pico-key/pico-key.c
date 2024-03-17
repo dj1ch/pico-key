@@ -1,16 +1,11 @@
 /** 
  * pico-key
- * 
  * licensed under GPL 3.0
- * 
  * built by @dj1ch
- * 
  */
 
 /** developer note:
- * 
  * old pr w/ python is here: https://github.com/dj1ch/pico-key/pull/1/commits/5d4c65106c6aa490b7eb047827c1ed3a00a21377
- * 
 */
 
 // config

@@ -2,6 +2,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 # set path
+# this is assuming you pulled this from github
 set(PICO_SDK_PATH "~/pico-sdk")
 
 # include the sdk
@@ -17,12 +18,11 @@ pico_sdk_init()
 include_directories(config)
 
 # source
-add_executable(pico-key
-    pico-key.c
-)
+add_executable(pico-key pico-key.c)
 
 # pico sdk libraries
 target_link_libraries(pico-key
+    pico_stdio
     pico_stdlib
     pico_malloc
     hardware_uart

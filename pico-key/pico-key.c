@@ -34,8 +34,10 @@ void boot() {
     sleep(1);
     printf("%s\n", author);
 
-    // memory 
+    // board info
+    printf("\nBoard info:\n")
     malloc_stats();
+    printf(VERSION)
 
     if (RUN_ON_STARTUP) {
         read();

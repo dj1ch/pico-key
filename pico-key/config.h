@@ -12,6 +12,6 @@
 #define RUN_ON_STARTUP true
 
 // version
-#define VERSION "0.1.0-alpha"
+#define VERSION "0.1.0-alpha\n"
 
 #endif // CONFIG_H

@@ -1,5 +1,5 @@
 /** 
- * pico-key
+ * pico-key.c
  * licensed under GPL 3.0
  * built by @dj1ch
  */
@@ -12,30 +12,17 @@
 #include "config.h"
 
 // libraries
-#include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
 #include <unistd.h>
 #include <ctype.h>
 
 // sdk
-#include <pico/stdlib.h>
-#include <pico/malloc.h>
-#include <hardware/uart.h>
-#include <hardware/gpio.h>
-
-// led definition
-#define LED_PIN PICO_DEFAULT_LED_PIN
-
-// functions
-int main();
-void boot();
-void buildScript();
-void testScript();
-void read();
-void fakeUSB();
-void misc();
-void options();
+#include "pico/stdio.h"
+#include "pico/stdlib.h"
+#include "pico/malloc.h"
+#include "hardware/uart.h"
+#include "hardware/gpio.h"
 
 void boot() {
     // boot logo

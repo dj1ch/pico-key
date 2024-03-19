@@ -131,13 +131,70 @@ void buildScript() {
 }
 
 void testScript() {
+    printf("\nRemember that testing the script will run this on your machine!\n");
+    char userWarning[10];
 
-}
+    while (1) {
+        printf("Are you okay with this? (Y/N) > ");
+
+        // get only the characters
+        fgets(userWarning, sizeof(userWarning), stdin);
+        userWarning[strcspn(userWarning, "\n")] = '\0';
+
+        // convert to uppercase
+        for (int i = 0; userWarning[i]; i++) {
+            userWarning[i] = toupper(userWarning[i]);
+        }
+
+        if (strcmp(userWarning, "Y") == 0) {
+            continue;
+        } else if (strcmp(userWarning, "N") == 0) {
+            break;
+        } else {
+            printf("%s: Not a valid response\n", userWarning);
+            continue;
+        }
+    }
+
+    char scriptPath[256];
+    while (1) {
+        printf("Script to test? > ");
+        fgets(scriptPath, sizeof(scriptPath), stdin);
+        scriptPath[strcspn(scriptPath, "\n")] = '\0';
+
+        if (strcmp(scriptPath, "EXIT") == 0 || strcmp(scriptPath, "exit") == 0) {
+            break;
+        } else {
+            read(scriptPath);
+        }
+    }
+}                                            
 
 // crap i gotta build a new compiler for this :/
-void read() {
+void read(const char* filePath) {
+    FILE *file = fopen(filePath, "r");
 
-}
+    if (file == NULL) {
+        perror("Can't open '%s' :/", filePath);
+        return;
+    }
+
+    char line[256];
+    while (fgets(line, sizeof(line), file)) {
+        char *command = strtok(line, " \t\n");
+
+        char *param = strtok(NULL, "\n");
+        while (param && strtok(NULL, "\n")) {
+            strcat(command, " ");
+            strcat(command, param);
+            param = strtok(NULL, "\n");
+        }
+
+        run(command);
+    }
+
+    fclose(filePath);
+}    
 
 void fakeUSB() {
     bool led = false;

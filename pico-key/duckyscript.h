@@ -93,9 +93,9 @@
 // mouse actions
 typedef enum {
     MOUSE_MOVE,
-    MOUSE_CLICK,
-    MOUSE_RIGHT_CLICK,
-    MOUSE_MIDDLE_CLICK
+    CLICK,
+    RIGHT_CLICK,
+    MIDDLE_CLICK
 } mse;
 
 // keyboard actions

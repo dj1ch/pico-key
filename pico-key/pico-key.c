@@ -35,9 +35,7 @@ void boot() {
     printf("%s\n", author);
 
     // board info
-    printf("\nBoard info:\n")
-    malloc_stats();
-    printf(VERSION)
+    boardInfo();
 
     if (RUN_ON_STARTUP) {
         read();
@@ -196,5 +194,33 @@ void misc() {
 }
 
 void options() {
+    printf("\nHere we would put settings to set for the board, see the current board information, etc.\n");
+    printf("\n1. Print board info\n")
+    printf("\n> ")
 
+    char choiceC[10];
+    
+    // remove whitespace
+    fgets(choiceC, sizeof(choiceC), stdin);
+    choiceC[strcspn(choiceC, "\n")] = '\0';
+
+    // uppercase and compare it
+    for (int i = 0; choiceC[i]; i++) {
+        choiceC[i] = toupper(choiceC[i]);
+    }
+
+    if (strcmp(choiceC, "EXIT") == 0) {
+        return; 
+    }
+
+    if (strcmp(choiceC, "1") == 0) {
+        boardInfo(); 
+    }
+}
+
+void boardInfo() {
+    // we can only really print memory here
+    printf("\nBoard info:\n");
+    printf(malloc_stats() + " bytes");
+    printf(VERSION);
 }

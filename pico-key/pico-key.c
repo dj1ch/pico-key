@@ -11,6 +11,9 @@
 // config
 #include "config.h"
 
+// duckyscript
+#include "duckyscript.h"
+
 // libraries
 #include <string.h>
 #include <stdbool.h>

@@ -5,7 +5,8 @@
 
 #include "duckyscript.h"
 
+// run a duckyscript command based on what is in duckyscript.h
 int run(const char* command) {
-
+    
     return 0;
 }

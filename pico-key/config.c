@@ -7,7 +7,10 @@
 
 void checkConfig() {
     printf("\nCurrent Config: \n");
-    printf("LED definition: \n");
-    printf("Payload location: \n");
-    printf("Current version: \n");
+    printf("LED Pin definition: ");
+    printf(LED_PIN);
+    printf("Payload location: ");
+    printf(PAYLOAD_LOCATION);
+    printf("Current version: ");
+    printf(VERSION);
 }

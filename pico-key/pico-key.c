@@ -282,5 +282,5 @@ void boardInfo() {
     // we can only really print memory here
     printf("\nBoard info:\n");
     printf(malloc_stats() + " bytes");
-    printf(VERSION);
+    printf(checkConfig());
 }

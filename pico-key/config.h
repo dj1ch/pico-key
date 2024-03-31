@@ -8,7 +8,7 @@
 
 // configuration parameters
 #define LED_PIN PICO_DEFAULT_LED_PIN
-#define PAYLOAD_LOCATION "/payload.dd\n"
+const char* PAYLOAD_LOCATION = "/payload.dd\n";
 #define RUN_ON_STARTUP true
 
 // version

@@ -83,6 +83,10 @@ int main() {
                 options();
                 break;
 
+            case 69:
+                printf("\nWhat did you expect to be here???\n");
+                break;
+
             default: 
                 printf("\n%d: Invalid choice :/\n", choice);
                 break; 

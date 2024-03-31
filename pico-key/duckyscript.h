@@ -6,6 +6,9 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
+#include <stdio.h>
+#include <string.h>
+
 // control keys 
 #define WINDOWS         0x08
 #define GUI             0x10

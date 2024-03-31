@@ -5,12 +5,10 @@
 
 #include "config.h"
 
-void checkConfig() {
+void checkConfig(const Configuration& config) {
     printf("\nCurrent Config: \n");
-    printf("LED Pin definition: ");
-    printf(LED_PIN);
-    printf("Payload location: ");
-    printf(PAYLOAD_LOCATION);
-    printf("Current version: ");
-    printf(VERSION);
+    printf("LED Pin definition: %d\n", config.led_pin);
+    printf("Payload location: %s\n", config.payload_location.c_str());
+    printf("Run on startup: %s\n", config.run_on_startup ? "true" : "false");
+    printf("Current version: %s\n", config.version.c_str());
 }

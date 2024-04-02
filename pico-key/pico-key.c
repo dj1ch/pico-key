@@ -15,7 +15,7 @@
 #include "duckyscript.h"
 
 // :)
-#include "egg.h"
+#include "easter-egg.h"
 
 // libraries
 #include <string.h>

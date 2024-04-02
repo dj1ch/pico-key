@@ -3,7 +3,7 @@
  * maybe this is an easter egg ;)
 */
 
-#include "egg.h"
+#include "easter-egg.h"
 
 void specialMessage() {
     printf("\nWhat did you expect to be here???\n");

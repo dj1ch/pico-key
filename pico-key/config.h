@@ -22,6 +22,6 @@ struct Configuration {
     std::string version;
 };
 
-Configuration load(const char* filename);
+void checkConfig();
 
 #endif // CONFIG_H

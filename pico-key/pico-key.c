@@ -14,6 +14,9 @@
 // duckyscript
 #include "duckyscript.h"
 
+// :)
+#include "egg.h"
+
 // libraries
 #include <string.h>
 #include <stdbool.h>
@@ -84,7 +87,7 @@ int main() {
                 break;
 
             case 69:
-                printf("\nWhat did you expect to be here???\n");
+                specialMessage();
                 break;
 
             default: 

@@ -6,7 +6,6 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
-#include <string>
 #include "pico/stdio.h"
 
 // control keys 

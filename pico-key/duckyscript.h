@@ -118,6 +118,9 @@ typedef struct {
     char key;
 } keyCommand;
 
-void run();
+int run();
+void read();
+void buildScript();
+void testScript();
 
 #endif // DUCKYSCRIPT_H

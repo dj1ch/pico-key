@@ -6,7 +6,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include <string>
 #include "pico/stdio.h"
 
 // default config params
@@ -17,9 +16,9 @@
 // configuration structure
 struct Configuration {
     int led_pin;
-    std::string payload_location;
+    char* payload_location;
     bool run_on_startup;
-    std::string version;
+    char* version;
 };
 
 void checkConfig();

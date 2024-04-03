@@ -11,7 +11,6 @@
 #include "duckyscript.h"
 #include "easter-egg.h"
 
-#include <string>
 #include <stdbool.h>
 #include <unistd.h>
 #include <ctype.h>

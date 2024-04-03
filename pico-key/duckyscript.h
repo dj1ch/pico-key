@@ -6,7 +6,6 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
-#include <string>
 #include "pico/stdio.h"
 
 // control keys 
@@ -118,6 +117,9 @@ typedef struct {
     char key;
 } keyCommand;
 
-void run();
+int run();
+void read();
+void buildScript();
+void testScript();
 
 #endif // DUCKYSCRIPT_H

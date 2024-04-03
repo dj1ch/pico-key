@@ -8,42 +8,7 @@
  * old pr w/ python is here: https://github.com/dj1ch/pico-key/pull/1/commits/5d4c65106c6aa490b7eb047827c1ed3a00a21377
 */
 
-// config
-#include "config.h"
-
-// libraries
-#include <string.h>
-#include <stdbool.h>
-#include <unistd.h>
-#include <ctype.h>
-
-// sdk
-#include "pico/stdio.h"
-#include "pico/stdlib.h"
-#include "pico/malloc.h"
-#include "hardware/uart.h"
-#include "hardware/gpio.h"
-
-void boot() {
-    // boot logo
-    char coolArt[] = "pico-key...";
-    char author[] = "by dj1ch";
-
-    // print this ^^
-    printf("\n%s\n", coolArt);
-    sleep(1);
-    printf("%s\n", author);
-
-    // board info
-    boardInfo();
-
-    if (RUN_ON_STARTUP) {
-        read();
-        return 0;
-    } else {
-        // do nothing
-    }
-}
+#include "pico-key.h"
 
 int main() {
     boot();
@@ -80,6 +45,10 @@ int main() {
                 options();
                 break;
 
+            case 69:
+                specialMessage();
+                break;
+
             default: 
                 printf("\n%d: Invalid choice :/\n", choice);
                 break; 
@@ -94,7 +63,7 @@ void buildScript() {
     printf("Type 'exit' to stop.\n");
 
     // assume it's named payload.dd
-    FILE *file = fopen(PAYLOAD_LOCATION, "w");
+    FILE *file = fopen(config.payload_location, "w");
 
     if (file == NULL) {
         printf("Failed to open payload.dd! :(\n");
@@ -128,13 +97,44 @@ void buildScript() {
 }
 
 void testScript() {
+    printf("\nRemember that testing the script will run this on your machine!\n");
+    char userWarning[10];
 
-}
+    while (1) {
+        printf("Are you okay with this? (Y/N) > ");
 
-// crap i gotta build a new compiler for this :/
-void read() {
+        // get only the characters
+        fgets(userWarning, sizeof(userWarning), stdin);
+        userWarning[strcspn(userWarning, "\n")] = '\0';
 
-}
+        // convert to uppercase
+        for (int i = 0; userWarning[i]; i++) {
+            userWarning[i] = toupper(userWarning[i]);
+        }
+
+        if (strcmp(userWarning, "Y") == 0) {
+            continue;
+        } else if (strcmp(userWarning, "N") == 0) {
+            break;
+        } else {
+            printf("%s: Not a valid response\n", userWarning);
+            continue;
+        }
+    }
+
+    char scriptPath[256];
+    while (1) {
+        printf("Script to test? > ");
+        fgets(scriptPath, sizeof(scriptPath), stdin);
+        scriptPath[strcspn(scriptPath, "\n")] = '\0';
+
+        if (strcmp(scriptPath, "EXIT") == 0 || strcmp(scriptPath, "exit") == 0) {
+            break;
+        } else {
+            read(scriptPath);
+        }
+    }
+}                                                
 
 void fakeUSB() {
     bool led = false;
@@ -216,11 +216,4 @@ void options() {
     if (strcmp(choiceC, "1") == 0) {
         boardInfo(); 
     }
-}
-
-void boardInfo() {
-    // we can only really print memory here
-    printf("\nBoard info:\n");
-    printf(malloc_stats() + " bytes");
-    printf(VERSION);
 }

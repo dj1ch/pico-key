@@ -118,4 +118,6 @@ typedef struct {
     char key;
 } keyCommand;
 
+void run();
+
 #endif // DUCKYSCRIPT_H

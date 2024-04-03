@@ -28,4 +28,13 @@
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
 
+int main();
+void boot();
+void buildScript();
+void testScript();
+void read();
+void fakeUSB();
+void misc();
+void options();
+
 #endif // PICO_KEY_H

@@ -30,27 +30,6 @@
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
 
-void boot() {
-    // boot logo
-    char coolArt[] = "pico-key...";
-    char author[] = "by dj1ch";
-
-    // print this ^^
-    printf("\n%s\n", coolArt);
-    sleep(1);
-    printf("%s\n", author);
-
-    // board info
-    boardInfo();
-
-    if (RUN_ON_STARTUP) {
-        read();
-        return 0;
-    } else {
-        // do nothing
-    }
-}
-
 int main() {
     boot();
     while (true) {
@@ -98,13 +77,34 @@ int main() {
     return 0;
 }
 
+void boot() {
+    // boot logo
+    char coolArt[] = "pico-key...";
+    char author[] = "by dj1ch";
+
+    // print this ^^
+    printf("\n%s\n", coolArt);
+    sleep(1);
+    printf("%s\n", author);
+
+    // board info
+    boardInfo();
+
+    if (config.run_on_startup) {
+        read();
+        return 0;
+    } else {
+        // do nothing
+    }
+}
+
 void buildScript() {
     printf("\nPayloads are built here, but can also be modified using a file manager.");
     printf("Every time you press enter it will be written to the file.\n");
     printf("Type 'exit' to stop.\n");
 
     // assume it's named payload.dd
-    FILE *file = fopen(PAYLOAD_LOCATION, "w");
+    FILE *file = fopen(config.payload_location, "w");
 
     if (file == NULL) {
         printf("Failed to open payload.dd! :(\n");

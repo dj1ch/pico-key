@@ -1,35 +1,27 @@
 /**
  * pico-key.h
- * main stuff
+ * main header for main stuff
 */
 
 #ifndef PICO_KEY_H
 #define PICO_KEY_H
 
-// config
 #include "config.h"
-
-// duckyscript
+#include "boot.h"
 #include "duckyscript.h"
-
-// :)
 #include "easter-egg.h"
 
-// libraries
-#include <string.h>
+#include <string>
 #include <stdbool.h>
 #include <unistd.h>
 #include <ctype.h>
 
-// sdk
 #include "pico/stdio.h"
 #include "pico/stdlib.h"
-#include "pico/malloc.h"
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
 
 int main();
-void boot();
 void buildScript();
 void testScript();
 void read();

@@ -8,27 +8,7 @@
  * old pr w/ python is here: https://github.com/dj1ch/pico-key/pull/1/commits/5d4c65106c6aa490b7eb047827c1ed3a00a21377
 */
 
-// config
-#include "config.h"
-
-// duckyscript
-#include "duckyscript.h"
-
-// :)
-#include "easter-egg.h"
-
-// libraries
-#include <string.h>
-#include <stdbool.h>
-#include <unistd.h>
-#include <ctype.h>
-
-// sdk
-#include "pico/stdio.h"
-#include "pico/stdlib.h"
-#include "pico/malloc.h"
-#include "hardware/uart.h"
-#include "hardware/gpio.h"
+#include "pico-key.h"
 
 int main() {
     boot();
@@ -75,27 +55,6 @@ int main() {
         }
     }
     return 0;
-}
-
-void boot() {
-    // boot logo
-    char coolArt[] = "pico-key...";
-    char author[] = "by dj1ch";
-
-    // print this ^^
-    printf("\n%s\n", coolArt);
-    sleep(1);
-    printf("%s\n", author);
-
-    // board info
-    boardInfo();
-
-    if (config.run_on_startup) {
-        read();
-        return 0;
-    } else {
-        // do nothing
-    }
 }
 
 void buildScript() {
@@ -175,33 +134,7 @@ void testScript() {
             read(scriptPath);
         }
     }
-}                                            
-
-// crap i gotta build a new compiler for this :/
-void read(const char* filePath) {
-    FILE *file = fopen(filePath, "r");
-
-    if (file == NULL) {
-        perror("Can't open '%s' :/", filePath);
-        return;
-    }
-
-    char line[256];
-    while (fgets(line, sizeof(line), file)) {
-        char *command = strtok(line, " \t\n");
-
-        char *param = strtok(NULL, "\n");
-        while (param && strtok(NULL, "\n")) {
-            strcat(command, " ");
-            strcat(command, param);
-            param = strtok(NULL, "\n");
-        }
-
-        run(command);
-    }
-
-    fclose(filePath);
-}    
+}                                                
 
 void fakeUSB() {
     bool led = false;
@@ -283,11 +216,4 @@ void options() {
     if (strcmp(choiceC, "1") == 0) {
         boardInfo(); 
     }
-}
-
-void boardInfo() {
-    // we can only really print memory here
-    printf("\nBoard info:\n");
-    printf(malloc_stats() + " bytes");
-    printf(checkConfig());
 }

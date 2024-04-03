@@ -6,8 +6,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include <stdio.h>
 #include <string>
+#include "pico/stdio.h"
 
 // default config params
 #define LED_PIN PICO_DEFAULT_LED_PIN

@@ -6,7 +6,7 @@
 #ifndef EASTER_EGG_H
 #define EASTER_EGG_H
 
-#include <stdio.h>
+#include "pico/stdio.h"
 
 char* specialChoice[10];
 

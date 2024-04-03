@@ -6,8 +6,8 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
-#include <stdio.h>
-#include <string.h>
+#include <string>
+#include "pico/stdio.h"
 
 // control keys 
 #define WINDOWS         0x08

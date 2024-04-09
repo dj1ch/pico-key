@@ -16,9 +16,6 @@
 #include <ctype.h>
 
 #include "pico/stdio.h"
-#include "pico/stdlib.h"
-#include "hardware/uart.h"
-#include "hardware/gpio.h"
 
 int main();
 void buildScript();

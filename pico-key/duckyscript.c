@@ -38,7 +38,7 @@ void read(const char* filePath) {
 }
 
 void buildScript() {
-    printf("\nPayloads are built here, but can also be modified using a file manager.");
+    printf("\nPayloads are built here, but can also be modified using a file manager.\n");
     printf("Every time you press enter it will be written to the file.\n");
     printf("Type 'exit' to stop.\n");
 

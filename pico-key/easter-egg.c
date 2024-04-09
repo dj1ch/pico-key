@@ -7,7 +7,8 @@
 
 void specialMessage() {
     printf("\nWhat did you expect to be here???\n");
-    printf("\nAnyway, wanna play a game? (Y/N) > ");
+    printf("Weirdo...\n");
+    printf("\nAnyway, wanna play a game? (Y/N) > \n");
 
     char* specialChoice[10];
 

@@ -1,1 +1,4 @@
 
+[submodule "pico-key/tinyusb"]
+	path = pico-key/tinyusb
+	url = https://github.com/hathach/tinyusb.git

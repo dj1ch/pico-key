@@ -11,6 +11,8 @@
 #include "pico-key.h"
 
 int main() {
+    stdio_init_all();
+
     boot();
     while (true) {
         printf("\n1. Build Bad USB script\n");

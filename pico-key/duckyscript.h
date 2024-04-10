@@ -6,6 +6,8 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
+#include "tinyusb/src/tusb.h"
+#include "tinyusb/src/tusb_option.h"
 #include "pico/stdio.h"
 
 // control keys 

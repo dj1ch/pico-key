@@ -10,11 +10,6 @@
 #include "boot.h"
 #include "duckyscript.h"
 #include "easter-egg.h"
-
-#include <stdbool.h>
-#include <unistd.h>
-#include <ctype.h>
-
 #include "pico/stdio.h"
 
 int main();

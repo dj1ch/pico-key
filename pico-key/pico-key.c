@@ -10,7 +10,7 @@
 
 #include "pico-key.h"
 
-int main() {
+int main(void) {
     stdio_init_all();
 
     boot();

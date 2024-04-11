@@ -5,7 +5,7 @@
 
 #include "boot.h"
 
-int boot() {
+int boot(void) {
     // boot logo
     char coolArt[] = "pico-key...";
     char author[] = "by dj1ch";
@@ -26,7 +26,7 @@ int boot() {
     }
 }
 
-void boardInfo() {
+void boardInfo(void) {
     // we can only really print memory here
     printf("\nBoard info:\n");
     printf(malloc_stats() + " bytes");

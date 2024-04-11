@@ -10,6 +10,9 @@
 #include "tinyusb/src/tusb_option.h"
 #include "pico/stdio.h"
 
+// define hid report size
+#define KEYBOARD_REPORT_SIZE 8
+
 // control keys 
 #define WINDOWS         0x08
 #define GUI             0x10
@@ -92,6 +95,21 @@
 #define F11             0x44
 #define F12             0x45
 
+// regular keys
+typedef struct {
+    char key;
+} RegularKey;
+
+// function keys
+typedef struct {
+    uint8_t code;
+} FuncKey;
+
+// mod keys
+typedef struct {
+    uint8_t code;
+} ModKey;
+
 // mouse actions
 typedef enum {
     MOUSE_MOVE,
@@ -120,8 +138,13 @@ typedef struct {
 } keyCommand;
 
 int run();
+void sendReport();
+void sendKey();
+void sendFuncKey();
+void sendModKey();
 void read();
 void buildScript();
 void testScript();
+uint8_t keyboard_report[];
 
 #endif // DUCKYSCRIPT_H

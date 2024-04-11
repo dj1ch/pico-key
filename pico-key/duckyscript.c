@@ -5,10 +5,95 @@
 
 #include "duckyscript.h"
 
+// set size
+uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
+
+// arrays for keys
+RegularKey regularKeys[] = {
+    {A}, {B}, {C}, {D}, {E}, {F}, {G}, {H}, {I}, {J}, {K}, {L}, {M},
+    {N}, {O}, {P}, {Q}, {R}, {S}, {T}, {U}, {V}, {W}, {X}, {Y}, {Z}
+};
+
+FuncKey funcKeys[] = {
+    {BREAK}, {PAUSE}, {CAPSLOCK}, {DELETE}, {END}, {ESCAPE}, {HOME}, {INSERT}, {NUMLOCK}, 
+    {PAGEUP}, {PAGEDOWN}, {PRINTSCREEN}, {ENTER}, {SCROLLLOCK}, {SPACE}, {TAB}, {BACKSPACE}
+};
+
+ModKey modKeys[] = {
+    {WINDOWS}, {GUI}, {APP}, {MENU}, {SHIFT}, {ALT}, {CONTROL}, {CTRL},
+    {DOWNARROW}, {DOWN}, {LEFTARROW}, {LEFT}, {RIGHTARROW}, {RIGHT}, {UPARROW}, {UP}
+};
+
 // run a duckyscript command based on what is in duckyscript.h
-int run(const char* command) {
-    
+int run(const char* command, void* params) {
+    tusb_init();
+
+    // parse command and run
+    if (strcmp(command, "regular") == 0) {
+        RegularKey* regKey = (RegularKey*)params;
+        // send regular key
+        keyboard_report[0] = 0; // modifier keys
+        keyboard_report[1] = 0; // reserved
+        keyboard_report[2] = regKey->key; // key to press
+        keyboard_report[3] = 0; // reserved
+        keyboard_report[4] = 0; // reserved
+        keyboard_report[5] = 0; // reserved
+        keyboard_report[6] = 0; // reserved
+        keyboard_report[7] = 0; // reserved
+    } else if (strcmp(command, "modifier") == 0) {
+        ModKey* modKey = (ModKey*)params;
+        // send modifier key
+        keyboard_report[0] = modKey->code; // modifier keys
+        keyboard_report[1] = 0; // reserved
+        keyboard_report[2] = 0; // key to press
+        keyboard_report[3] = 0; // reserved
+        keyboard_report[4] = 0; // reserved
+        keyboard_report[5] = 0; // reserved
+        keyboard_report[6] = 0; // reserved
+        keyboard_report[7] = 0; // reserved
+    } else if (strcmp(command, "function") == 0) {
+        FuncKey* funcKey = (FuncKey*)params;
+        // send function key
+        keyboard_report[0] = 0; // modifier keys
+        keyboard_report[1] = 0; // reserved
+        keyboard_report[2] = funcKey->code; // key to press
+        keyboard_report[3] = 0; // reserved
+        keyboard_report[4] = 0; // reserved
+        keyboard_report[5] = 0; // reserved
+        keyboard_report[6] = 0; // reserved
+        keyboard_report[7] = 0; // reserved
+    }
+
+    // run attack
+    while (1) {
+        tud_task();
+    }
+
     return 0;
+}
+
+void sendReport(void) {
+    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report, KEYBOARD_REPORT_SIZE);
+}
+
+void sendKey(uint8_t keyCode) {
+    // send a regular key
+    keyboard_report[0] = 0; // no modifier keys
+    keyboard_report[2] = keyCode; // key to press
+    sendReport();
+}
+
+void sendModKey(uint8_t modKeyCode) {
+    // send a modifier key
+    keyboard_report[0] = modKeyCode; // modifier key code
+    sendReport();
+}
+
+void sendFuncKey(uint8_t funcKeyCode) {
+    // send a function key
+    keyboard_report[0] = 0; // no modifier keys
+    keyboard_report[2] = funcKeyCode; // function key code
+    sendReport();
 }
 
 // crap i gotta build a new compiler for this :/

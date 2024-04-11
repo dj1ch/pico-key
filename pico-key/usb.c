@@ -5,7 +5,7 @@
 
 #include "usb.h"
 
-void fakeUSB() {
+void fakeUSB(void) {
     bool led = false;
 
     printf("\n1. Start LED blinking\n");

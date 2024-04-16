@@ -26,8 +26,6 @@ ModKey modKeys[] = {
 
 // run a duckyscript command based on what is in duckyscript.h
 int run(const char* command, void* params) {
-    tusb_init();
-
     // parse command and run
     if (strcmp(command, "regular") == 0) {
         RegularKey* regKey = (RegularKey*)params;
@@ -64,11 +62,13 @@ int run(const char* command, void* params) {
         keyboard_report[7] = 0; // reserved
     }
 
+    printf("\nStarting attack!\n");
     // run attack
     while (1) {
         tud_task();
     }
 
+    printf("\nAttack finished!\n");
     return 0;
 }
 

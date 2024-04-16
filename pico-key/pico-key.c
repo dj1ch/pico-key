@@ -11,7 +11,9 @@
 #include "pico-key.h"
 
 int main(void) {
+    // main initialization
     stdio_init_all();
+    tusb_init();
 
     boot();
     while (true) {

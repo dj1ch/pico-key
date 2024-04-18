@@ -6,6 +6,7 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
+#include "config.h"
 #include "filesystem.h"
 #include "pico/stdio.h"
 #include "tinyusb/src/tusb.h"

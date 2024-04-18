@@ -127,13 +127,8 @@ void buildScript() {
     printf("Every time you press enter it will be written to the file.\n");
     printf("Type 'exit' to stop.\n");
 
-    // assume it's named payload.dd
-    FILE *file = fopen(config.payload_location, "w");
-
-    if (file == NULL) {
-        printf("Failed to open payload.dd! :(\n");
-        return;
-    }
+    // define script buffer
+    char scriptBuffer[sizeBytes];
 
     // 25 chars max!! most of the time commands are shorter.
     const int MAX_LINE_LENGTH = 25;
@@ -149,16 +144,15 @@ void buildScript() {
             script[i] = toupper(script[i]);
         }
 
-        // exit if command is "exit"
-        if (strcmp(script, "EXIT") == 0) {
+        // append script line to buffer
+        if (strlen(script) + strlen(scriptBuffer) + 1 <= sizeBytes) {
+            strcat(scriptBuffer, script);
+        } else {
+            printf("Script buffer is full. Exiting.\n");
             break;
         }
-
-        fprintf(file, "%s\n", script);
-
     }
-    fclose(file);
-    printf("Script saved to payload.dd!\n");
+    printf("Script saved!\n");
 }
 
 void testScript() {

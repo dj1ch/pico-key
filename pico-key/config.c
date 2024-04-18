@@ -5,6 +5,10 @@
 
 #include "config.h"
 
+// define where to write
+uint32_t startAddress = 0x10000;
+uint32_t sizeBytes = 4096;
+
 void checkConfig(const Configuration& config) {
     printf("\nCurrent Config: \n");
     printf("LED Pin definition: %d\n", config.led_pin);

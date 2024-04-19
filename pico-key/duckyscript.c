@@ -5,6 +5,9 @@
 
 #include "duckyscript.h"
 
+// full script
+uint8_t fullScript[sizeBytes];
+
 // set size
 uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
 
@@ -97,30 +100,24 @@ void sendFuncKey(uint8_t funcKeyCode) {
 }
 
 // crap i gotta build a new compiler for this :/
-void read(const char* filePath) {
-    FILE *file = fopen(filePath, "r");
+void read(uint8_t array[]) {
+    char* token;
+    char* rest = array;
+    const char commas[] = ",";
+    
+    // tokenize buffer
+    while ((token = strtok_r(rest, commas, &rest))) {
+        char* command = strtok(token, " \t\n");
+        char* param = strtok(NULL, "\n");
 
-    if (file == NULL) {
-        perror("Can't open '%s' :/", filePath);
-        return;
-    }
-
-    char line[256];
-    while (fgets(line, sizeof(line), file)) {
-        char *command = strtok(line, " \t\n");
-
-        char *param = strtok(NULL, "\n");
-        while (param && strtok(NULL, "\n")) {
-            strcat(command, " ");
-            strcat(command, param);
-            param = strtok(NULL, "\n");
+        if (strcmp(command, "regular") == 0 || strcmp(command, "modifier") == 0 || strcmp(command, "function") == 0) {
+            run(command);
+        } else {
+            printf("Unknown command: %s\n", command);
         }
-
-        run(command);
     }
-
-    fclose(filePath);
 }
+
 
 void buildScript() {
     printf("\nPayloads are built here, but can also be modified using a file manager.\n");
@@ -152,6 +149,10 @@ void buildScript() {
             break;
         }
     }
+
+    // format memory and write required info there
+    format();
+    seperate(scriptBuffer, sizeof(scriptBuffer), fullScript);
     printf("Script saved!\n");
 }
 
@@ -181,16 +182,6 @@ void testScript() {
         }
     }
 
-    char scriptPath[256];
-    while (1) {
-        printf("Script to test? > ");
-        fgets(scriptPath, sizeof(scriptPath), stdin);
-        scriptPath[strcspn(scriptPath, "\n")] = '\0';
-
-        if (strcmp(scriptPath, "EXIT") == 0 || strcmp(scriptPath, "exit") == 0) {
-            break;
-        } else {
-            read(scriptPath);
-        }
-    }
+    // when we pass this we read the script
+    read(fullScript);
 }

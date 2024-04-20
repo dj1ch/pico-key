@@ -7,6 +7,7 @@
 #define BOOT_H
 
 #include "config.h"
+#include "usb.h"
 #include "pico/stdio.h"
 #include "pico/malloc.h"
 

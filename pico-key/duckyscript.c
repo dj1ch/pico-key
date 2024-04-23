@@ -153,6 +153,8 @@ void buildScript() {
     // format memory and write required info there
     format();
     seperate(scriptBuffer, sizeof(scriptBuffer), fullScript);
+    write(fullScript, sizeof(fullScript));
+
     printf("Script saved!\n");
 }
 

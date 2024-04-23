@@ -10,7 +10,6 @@
 
 // default config params
 #define LED_PIN PICO_DEFAULT_LED_PIN
-#define DEFAULT_PAYLOAD_LOCATION "/payload.dd"
 #define DEFAULT_RUN_ON_STARTUP true
 
 // configuration structure
@@ -22,5 +21,7 @@ struct Configuration {
 };
 
 void checkConfig();
+uint32_t startAddress;
+uint32_t sizeBytes;
 
 #endif // CONFIG_H

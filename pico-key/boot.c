@@ -16,10 +16,13 @@ int boot(void) {
     printf("%s\n", author);
 
     // board info
-    boardInfo();
+    boardInfo(void);
+
+    // spoof id
+    spoofID(void);
 
     if (config.run_on_startup) {
-        read();
+        read(fullScript); // may need to fix that
         return 0;
     } else {
         // do nothing

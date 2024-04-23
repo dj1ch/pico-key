@@ -6,6 +6,9 @@
 #ifndef PICO_KEY_H
 #define PICO_KEY_H
 
+#include "stm.h"
+#include "usb.h"
+#include "settings.h"
 #include "config.h"
 #include "boot.h"
 #include "duckyscript.h"

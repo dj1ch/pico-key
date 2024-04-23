@@ -11,14 +11,17 @@
 #include "pico-key.h"
 
 int main(void) {
+    // main initialization
     stdio_init_all();
+    tusb_init();
 
     boot();
     while (true) {
         printf("\n1. Build Bad USB script\n");
         printf("2. Test Bad USB script\n");
         printf("3. Fake USB drive\n");
-        printf("4. Misc\n");
+        printf("4. STM32F1-Picopwner\n");
+        printf("5. Misc\n");
         printf("5. Options\n");
         sleep(1);
 
@@ -39,11 +42,15 @@ int main(void) {
                 fakeUSB();
                 break; 
 
-            case 4:
+            case 4: 
+                smt(void);
+                break;
+
+            case 5:
                 misc();
                 break; 
 
-            case 5:
+            case 6:
                 options();
                 break;
 

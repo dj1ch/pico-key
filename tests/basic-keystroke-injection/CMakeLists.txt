@@ -2,7 +2,6 @@
 cmake_minimum_required(VERSION 3.13)
 
 # set path
-# this is assuming you pulled this from github
 set(PICO_SDK_FETCH_FROM_GIT ON)
 
 # include the sdk
@@ -14,19 +13,16 @@ project(pico-key)
 # start sdk
 pico_sdk_init()
 
-# include config
-include_directories(config)
+# add tinyusb library
+add_subdirectory(../pico-key/tinyusb/src)
 
 # source
-add_executable(pico-key pico-key.c)
+add_executable(pico-key main.c)
 
 # pico sdk libraries
 target_link_libraries(pico-key
     pico_stdio
-    pico_stdlib
-    pico_malloc
-    hardware_uart
-    hardware_gpio
+    tinyusb_device
 )
 
 # generate extra files

@@ -6,9 +6,11 @@
 #ifndef DUCKYSCRIPT_H
 #define DUCKYSCRIPT_H
 
+#include "config.h"
+#include "filesystem.h"
+#include "pico/stdio.h"
 #include "tinyusb/src/tusb.h"
 #include "tinyusb/src/tusb_option.h"
-#include "pico/stdio.h"
 
 // define hid report size
 #define KEYBOARD_REPORT_SIZE 8

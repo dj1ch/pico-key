@@ -8,6 +8,7 @@
 
 #include "config.h"
 #include "usb.h"
+#include "filesystem.h"
 #include "pico/stdio.h"
 #include "pico/malloc.h"
 

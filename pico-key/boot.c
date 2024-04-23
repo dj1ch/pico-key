@@ -22,7 +22,7 @@ int boot(void) {
     spoofID(void);
 
     if (config.run_on_startup) {
-        read(); // may need to fix that
+        read(fullScript); // may need to fix that
         return 0;
     } else {
         // do nothing

@@ -14,10 +14,10 @@
 
 // configuration structure
 struct Configuration {
-    int led_pin;
-    char* payload_location;
-    bool run_on_startup;
-    char* version;
+    const char* ledPin;
+    uint32_t payloadLocation;
+    const bool runOnStartup;
+    const char* version;
 };
 
 void checkConfig();

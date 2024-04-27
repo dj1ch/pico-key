@@ -147,6 +147,8 @@ void sendModKey();
 void read();
 void buildScript();
 void testScript();
+
 uint8_t keyboard_report[];
+uint8_t fullScript[];
 
 #endif // DUCKYSCRIPT_H

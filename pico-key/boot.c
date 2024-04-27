@@ -21,7 +21,7 @@ int boot(void) {
     // spoof id
     spoofID(void);
 
-    if (config.run_on_startup) {
+    if (config.runOnStartup) {
         read(fullScript); // may need to fix that
         return 0;
     } else {

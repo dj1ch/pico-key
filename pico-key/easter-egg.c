@@ -15,7 +15,7 @@ void specialMessage(void) {
     fgets(specialChoice, sizeof(specialChoice), stdin);
     specialChoice[strcspn(specialChoice, "\n")] = '\0';
 
-    for (int i = 0; specialChoicep[i]; i++) {
+    for (int i = 0; specialChoice[i]; i++) {
         specialChoice[i] = toupper(specialChoice[i]);
     }
 

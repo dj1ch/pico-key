@@ -14,9 +14,6 @@ project(pico-key)
 # start sdk
 pico_sdk_init()
 
-# include config
-include_directories(config)
-
 # source
 add_executable(pico-key pico-key.c)
 

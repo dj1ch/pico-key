@@ -22,7 +22,7 @@ int main(void) {
         printf("3. Fake USB drive\n");
         printf("4. STM32F1-Picopwner\n");
         printf("5. Misc\n");
-        printf("5. Options\n");
+        printf("6. Options\n");
         sleep(1);
 
         int choice;

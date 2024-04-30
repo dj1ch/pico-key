@@ -8,6 +8,7 @@
 
 #include "duckyscript.h"
 
+void exploitMenu(void);
 void binaryEsc(void);
 void suidEsc(void);
 void cronEsc(void);

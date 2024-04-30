@@ -55,6 +55,40 @@ uint8_t kernelExp[100] {
     // ./kernelExp
 }
 
+void exploitMenu(void) {
+    printf("\nThis is a set of pre-configured scripts meant for gaining a root shell, via the means of physically being connected to the system(perhaps by an HDMI cable), or perhaps through a reverse shell.\n");
+    printf("\n1. Binary path Exploit\n");
+    printf("2. SUID Exploit with GNU Nano\n");
+    printf("3. Reverse shell through Cron-jobs\n");
+    printf("4. (Older) Kernel Exploit\n");
+
+    printf("\n> ");
+    int choiceD;
+    scanf("%d", &choiceD);
+
+    switch(&choiceD) {
+        case 1:
+            binaryEsc(void);
+            break;
+
+        case 2:
+            suidEsc(void);
+            break;
+
+        case 3:
+            cronEsc(void);
+            break;
+
+        case 4:
+            kernelExp(void);
+            break;
+
+        default:
+            printf("\n%d: Invalid choice :/\n", choiceD);
+            break;
+    }
+}
+
 // attack creates a binary then runs it in the /tmp directory
 void binaryEsc(void) {
     format(void);

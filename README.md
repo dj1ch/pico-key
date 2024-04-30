@@ -28,7 +28,9 @@ Unlike your usual *Bad USB*, this is a lot more complex.
 
 4. Your config must be edited to allow the script to be run on startup after editing it, also done using the shell.
 
-5. The `tinyusb` library takes the duckyscript and writes it to the host.
+5. The `tinyusb` library takes the duckyscript and writes it to the host when it boots up, assuming that the configuration is set correctly.
+
+Essentially, this is just a *Metasploit-style* pentesting tool for the Raspberry Pi Pico.
 
 **Before asking to install, this is merely a blueprint for what I will be working on for the next couple of weeks!**
 
@@ -40,7 +42,7 @@ The shell allows you to do a fair share of things with the board, allowing you t
 
 **How long will it be until a release?**
 
-Most of the changes haven't been tested and it is yet to work as intended. This might take a while depending on how long it will take to implement the wanted feature(s). Most likely this will all be finalized sometime around late April 2024
+Most of the changes haven't been tested and it is yet to work as intended. This might take a while depending on how long it will take to implement the wanted feature(s). Most likely this will all be finalized sometime around late summer (July to August) 2024.
 
 **Can it do things other than Keystroke injection?**
 

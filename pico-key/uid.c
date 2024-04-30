@@ -57,21 +57,25 @@ uint8_t kernelExp[100] {
 
 // attack creates a binary then runs it in the /tmp directory
 void binaryEsc(void) {
+    format(void);
     read(binaryEsc[100]);
 }
 
 // attack takes advantage of lazy sudo configuration for nano
 void suidEsc(void) {
+    format(void);
     read(suidEsc[100]);
 }
 
 // totally not xz!
 // attack creates a root reverse shell using a cron job
 void cronEsc(void) {
+    format(void);
     read(cronEsc[100]);
 }
 
 // attack creates an overlay fs if vulnerable
 void kernelExp(void) {
+    format(void);
     read(kernelExp[100]);
 }

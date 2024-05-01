@@ -63,29 +63,43 @@ void exploitMenu(void) {
     printf("4. (Older) Kernel Exploit\n");
 
     printf("\n> ");
-    int choiceD;
-    scanf("%d", &choiceD);
+    char choiceD[10];
+    
+    // remove whitespace
+    fgets(choiceC, sizeof(choiceC), stdin);
+    choiceC[strcspn(choiceC, "\n")] = '\0';
 
-    switch(&choiceD) {
-        case 1:
-            binaryEsc(void);
-            break;
+    // uppercase and compare it
+    for (int i = 0; choiceD[i]; i++) {
+        choiceD[i] = toupper(choiceC[i]);
+    }
 
-        case 2:
-            suidEsc(void);
-            break;
+    if (strcmp(choiceD, "EXIT") == 0) {
+        return; 
+    }
 
-        case 3:
-            cronEsc(void);
-            break;
+    if (strcmp(choiceD, "1") == 0) {
+        binaryEsc(void); 
+        return;
+    }
 
-        case 4:
-            kernelExp(void);
-            break;
+    if (strcmp(choiceD, "2") == 0) {
+        suidEsc(void);
+        return;
+    }
 
-        default:
-            printf("\n%d: Invalid choice :/\n", choiceD);
-            break;
+    if (strcmp(choiceD, "3") == 0) {
+        cronEsc(void);
+        return;
+    }
+
+    if (strcmp(choiceD, "4") == 0) {
+        kernelExp(void);
+        return;
+    }
+
+    if (strcmp(choiceD, "EXIT") == 0) {
+        return; 
     }
 }
 

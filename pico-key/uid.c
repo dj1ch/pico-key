@@ -74,10 +74,6 @@ void exploitMenu(void) {
         choiceD[i] = toupper(choiceC[i]);
     }
 
-    if (strcmp(choiceD, "EXIT") == 0) {
-        return; 
-    }
-
     if (strcmp(choiceD, "1") == 0) {
         binaryEsc(void); 
         return;

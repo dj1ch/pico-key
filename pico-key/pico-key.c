@@ -15,7 +15,7 @@ int main(void) {
     stdio_init_all();
     tusb_init();
 
-    boot();
+    boot(void);
     while (true) {
         printf("\n1. Build Bad USB script\n");
         printf("2. Test Bad USB script\n");
@@ -31,15 +31,15 @@ int main(void) {
 
         switch (choice) {
             case 1:
-                buildScript();
+                buildScript(void);
                 break;
 
             case 2:
-                testScript();
+                testScript(void);
                 break; 
 
             case 3:
-                fakeUSB();
+                fakeUSB(void);
                 break; 
 
             case 4: 
@@ -47,15 +47,15 @@ int main(void) {
                 break;
 
             case 5:
-                misc();
+                misc(void);
                 break; 
 
             case 6:
-                options();
+                options(void);
                 break;
 
             case 69:
-                specialMessage();
+                specialMessage(void);
                 break;
 
             default: 

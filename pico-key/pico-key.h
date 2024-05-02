@@ -15,12 +15,6 @@
 #include "easter-egg.h"
 #include "pico/stdio.h"
 
-int main();
-void buildScript();
-void testScript();
-void read();
-void fakeUSB();
-void misc();
-void options();
+int main(void);
 
 #endif // PICO_KEY_H

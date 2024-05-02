@@ -119,7 +119,7 @@ void read(uint8_t array[]) {
 }
 
 
-void buildScript() {
+void buildScript(void) {
     printf("\nPayloads are built here, but can also be modified using a file manager.\n");
     printf("Every time you press enter it will be written to the file.\n");
     printf("Type 'exit' to stop.\n");
@@ -151,14 +151,14 @@ void buildScript() {
     }
 
     // format memory and write required info there
-    format();
+    format(void);
     seperate(scriptBuffer, sizeof(scriptBuffer), fullScript);
     write(fullScript, sizeof(fullScript));
 
     printf("Script saved!\n");
 }
 
-void testScript() {
+void testScript(void) {
     printf("\nRemember that testing the script will run this on your machine!\n");
     char userWarning[10];
 

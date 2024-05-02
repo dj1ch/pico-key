@@ -10,7 +10,7 @@
 
 char* specialChoice[10];
 
-void specialMessage();
-void game();
+void specialMessage(void);
+void game(void);
 
 #endif // EASTER_EGG_H

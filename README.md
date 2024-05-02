@@ -28,9 +28,23 @@ Unlike your usual *Bad USB*, this is a lot more complex.
 
 4. Your config must be edited to allow the script to be run on startup after editing it, also done using the shell.
 
-5. The `tinyusb` library takes the duckyscript and writes it to the host when it boots up, assuming that the configuration is set correctly.
+5. The `tinyusb` library takes the duckyscript from the specified memory address for which the buffer is located and writes it to the host when it boots up, assuming that the configuration is set correctly.
 
 Essentially, this is just a *Metasploit-style* pentesting tool for the Raspberry Pi Pico.
+
+Think of the whole process like this:
+
+```text
+shell user input -> formatted in an array -> array written to formatted part of memory -> interpreted on boot -> directly translates to commands/keys -> commands used and written to host
+```
+
+Although you as the user only sees:
+
+```text
+shell user input -> saved to memory -> written to host
+```
+
+Kind of a complex process but it still works!
 
 **Before asking to install, this is merely a blueprint for what I will be working on for the next couple of weeks!**
 

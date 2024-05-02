@@ -33,5 +33,6 @@ void boardInfo(void) {
     // we can only really print memory here
     printf("\nBoard info:\n");
     printf(malloc_stats() + " bytes");
-    printf(checkConfig());
+    initConfig();
+    printf(checkConfig(config));
 }

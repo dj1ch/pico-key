@@ -20,7 +20,7 @@ struct Configuration {
     const char* version;
 };
 
-void checkConfig();
+void checkConfig(const Configuration& config);
 uint32_t startAddress;
 uint32_t sizeBytes;
 

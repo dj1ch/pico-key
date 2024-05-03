@@ -140,13 +140,13 @@ typedef struct {
 } keyCommand;
 
 int run();
-void sendReport();
-void sendKey();
-void sendFuncKey();
-void sendModKey();
-void read();
-void buildScript();
-void testScript();
+void sendReport(void);
+void sendKey(uint8_t keyCode);
+void sendFuncKey(uint8_t funcKeyCode);
+void sendModKey(uint8_t modKeyCode);
+void read(uint8_t array[]);
+void buildScript(void);
+void testScript(void);
 
 uint8_t keyboard_report[];
 uint8_t fullScript[];

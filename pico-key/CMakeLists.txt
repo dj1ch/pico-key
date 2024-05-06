@@ -4,6 +4,10 @@ cmake_minimum_required(VERSION 3.13)
 # set path
 # this is assuming you pulled this from github
 set(PICO_SDK_FETCH_FROM_GIT ON)
+set(CMAKE_MAKE_PROGRAM make)
+set(CMAKE_C_COMPILER gcc)
+set(CMAKE_CXX_COMPILER gcc)
+set(PICO_TOOLCHAIN_PATH /home/$USER/pico-sdk/tools)
 
 # include the sdk
 include(${CMAKE_CURRENT_LIST_DIR}/pico_sdk_import.cmake)

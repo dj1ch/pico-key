@@ -15,16 +15,19 @@ tusb_desc_device_t deviceDescriptor = {
     .bLength            = sizeof(tusb_desc_device_t),
     .bDescriptorType    = TUSB_DESC_DEVICE,
     .bcdUSB             = 0x0200, // USB 2.0
-    .bDeviceClass       = USB_CLASS_PER_INTERFACE,
+
+    .bDeviceClass       = 0,
     .bDeviceSubClass    = 0,
     .bDeviceProtocol    = 0,
     .bMaxPacketSize0    = CFG_TUD_ENDPOINT0_SIZE,
+
     .idVendor           = 0x1d6b, // linux foundation
     .idProduct          = 0x0104, // multi-function composite gadget
     .bcdDevice          = 0x0100,
     .iManufacturer      = 0x01,
     .iProduct           = 0x02, 
     .iSerialNumber      = 0x03,
+
     .bNumConfigurations = 1
 };
 

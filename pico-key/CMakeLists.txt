@@ -30,6 +30,10 @@ target_link_libraries(pico-key
     pico_malloc
     hardware_uart
     hardware_gpio
+    hardware_flash
+    hardware_irq
+    hardware_sync
+    hardware_pwm
 )
 
 # generate extra files

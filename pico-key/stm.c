@@ -31,10 +31,7 @@
  *
  */
 
-#include "stdio.h"
-#include "pico/stdlib.h"
-#include "hardware/uart.h"
-#include "hardware/pwm.h"
+#include "stm.h"
 
 // Exact steps for attack:
 //  Power pin high

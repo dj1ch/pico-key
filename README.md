@@ -14,7 +14,17 @@ This [project](https://github.com/users/dj1ch/projects/3) showcases my progress 
 
 ### Install guide
 
-TBA, I don't plan on making an install guide until everything is set up.
+**For testing only!**
+
+When the code is ready, run the following:
+
+```bash
+cd pico-key-*/pico-key
+mkdir build
+cd build
+cmake ..
+make
+```
 
 ### The attack: explained
 

@@ -21,13 +21,13 @@
  * https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
 */
 
-/**
- * see tinyusb/src/class/hid/hid.h for definitions
-*/
-
 // mouse things
 #define LEFT_CLICK      
 #define RIGHT_CLICK      
+
+/**
+ * by default we use the left keys, usually people don't use the right control, alt, windows, etc.
+*/
 
 // control keys
 #define ALT             

@@ -22,83 +22,83 @@
 */
 
 // mouse things
-#define LEFT_CLICK      0x01
-#define RIGHT_CLICK     0x02 
+#define LEFT_CLICK      
+#define RIGHT_CLICK      
 
 /**
  * by default we use the left keys, usually people don't use the right control, alt, windows, etc.
 */
 
 // control keys
-#define ALT             0x12
-#define WINDOWS         0x5B
-#define SHIFT           0x10
-#define CONTROL         0x11
+#define ALT             
+#define WINDOWS         
+#define SHIFT           
+#define CONTROL         
 
 // arrows
-#define DOWNARROW       0x28
-#define LEFTARROW       0x25
-#define RIGHTARROW      0x27
-#define UPARROW         0x26
+#define DOWNARROW       
+#define LEFTARROW       
+#define RIGHTARROW      
+#define UPARROW         
 
 // other keys
-#define BACKSPACE       0x08
-#define CAPSLOCK        0x14
-#define DELETE          0x2E
-#define END             0x23
-#define ESC             0x1B
-#define HOME            0x24
-#define INSERT          0x2D
-#define NUMLOCK         0x90
-#define PAGEUP          0x21
-#define PAGEDOWN        0x22
-#define PRINTSCREEN     0x2C
-#define ENTER           0x0D
-#define SCROLLLOCK      0x91
-#define SPACE           0x20
-#define TAB             0x09
+#define BACKSPACE       
+#define CAPSLOCK        
+#define DELETE          
+#define END             
+#define ESC             
+#define HOME            
+#define INSERT          
+#define NUMLOCK         
+#define PAGEUP          
+#define PAGEDOWN        
+#define PRINTSCREEN     
+#define ENTER           
+#define SCROLLLOCK      
+#define SPACE           
+#define TAB             
 
 // abc's
-#define A               0x41
-#define B               0x42
-#define C               0x43
-#define D               0x44
-#define E               0x45
-#define F               0x46
-#define G               0x47
-#define H               0x48
-#define I               0x49
-#define J               0x4A
-#define K               0x4B
-#define L               0x4C
-#define M               0x4D
-#define N               0x4E
-#define O               0x4F
-#define P               0x50
-#define Q               0x51
-#define R               0x52
-#define S               0x53
-#define T               0x54
-#define U               0x55
-#define V               0x56
-#define W               0x57
-#define X               0x58
-#define Y               0x59
-#define Z               0x5A
+#define A               
+#define B               
+#define C               
+#define D               
+#define E               
+#define F               
+#define G               
+#define H               
+#define I               
+#define J               
+#define K               
+#define L               
+#define M               
+#define N               
+#define O               
+#define P               
+#define Q               
+#define R               
+#define S               
+#define T               
+#define U               
+#define V               
+#define W               
+#define X               
+#define Y               
+#define Z               
 
 // f keys
-#define F1              0x70
-#define F2              0x71
-#define F3              0x72
-#define F4              0x73
-#define F5              0x74
-#define F6              0x75
-#define F7              0x76
-#define F8              0x77
-#define F9              0x78
-#define F10             0x79
-#define F11             0x7A
-#define F12             0x7B
+#define F1              
+#define F2              
+#define F3              
+#define F4              
+#define F5              
+#define F6              
+#define F7              
+#define F8              
+#define F9              
+#define F10             
+#define F11             
+#define F12             
 
 // regular keys
 typedef struct {

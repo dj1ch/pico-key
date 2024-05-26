@@ -16,7 +16,7 @@
 typedef struct {
     const char* ledPin;
     uint32_t payloadLocation;
-    const bool runOnStartup;
+    bool runOnStartup;
     const char* version;
 } Configuration;
 

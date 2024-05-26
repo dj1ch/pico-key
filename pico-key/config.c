@@ -19,7 +19,7 @@ void initConfig() {
     config.version = "0.1.0-alpha";
 }
 
-void checkConfig(const Configuration& config) {
+void checkConfig(const Configuration *config) {
     printf("\nCurrent Config: \n");
     printf("LED Pin definition: %d\n", config.ledPin.c_str());
     printf("Payload location: %s\n", config.payloadLocation);

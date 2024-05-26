@@ -13,16 +13,16 @@ const uint32_t startAddress = 0x10000;
 const uint32_t sizeBytes = 4096;
 
 void initConfig() {
-    config->ledPin = LED_PIN;
-    config->payloadLocation = startAddress;
-    config->runOnStartup = true;
-    config->version = "0.1.0-alpha";
+    config.ledPin = LED_PIN;
+    config.payloadLocation = startAddress;
+    config.runOnStartup = true;
+    config.version = "0.1.0-alpha";
 }
 
 void checkConfig(const Configuration *config) {
     printf("\nCurrent Config: \n");
-    printf("LED Pin definition: %d\n", config->ledPin.c_str());
+    printf("LED Pin definition: %d\n", config->ledPin);
     printf("Payload location: %s\n", config->payloadLocation);
     printf("Run on startup: %s\n", config->runOnStartup ? "true" : "false");
-    printf("Current version: %s\n", config->version.c_str());
+    printf("Current version: %s\n", config->version);
 }

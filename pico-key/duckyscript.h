@@ -15,6 +15,9 @@
 // define hid report size
 #define KEYBOARD_REPORT_SIZE 8
 
+// must be the same as sizeBytes in config.c
+#define SCRIPT_SIZE 4096
+
 /**
  * source:
  * https://docstore.mik.ua/orelly/webprog/DHTML_javascript/0596004672_jvdhtmlckbk-app-b.html
@@ -148,6 +151,6 @@ void buildScript();
 void testScript();
 
 const uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
-const uint8_t fullScript[sizeBytes];
+const uint8_t fullScript[SCRIPT_SIZE];
 
 #endif // DUCKYSCRIPT_H

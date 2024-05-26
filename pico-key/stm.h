@@ -6,6 +6,11 @@
 #ifndef STM_H
 #define STM_H
 
+#include "pico/stdio.h"
+#include "pico/stdlib.h"
+#include "hardware/uart.h"
+#include "hardware/pwm.h"
+
 #define LED_PIN PICO_DEFAULT_LED_PIN
 
 #define UART_TX_PIN 0

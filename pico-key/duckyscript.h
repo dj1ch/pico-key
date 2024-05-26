@@ -9,8 +9,8 @@
 #include "config.h"
 #include "filesystem.h"
 #include "pico/stdio.h"
-#include "tinyusb/src/tusb.h"
-#include "tinyusb/src/tusb_option.h"
+#include "tusb.h"
+#include "tusb_option.h"
 
 // define hid report size
 #define KEYBOARD_REPORT_SIZE 8

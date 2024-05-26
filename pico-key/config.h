@@ -13,14 +13,14 @@
 #define DEFAULT_RUN_ON_STARTUP true
 
 // configuration structure
-struct Configuration {
+typedef struct {
     const char* ledPin;
     uint32_t payloadLocation;
     const bool runOnStartup;
     const char* version;
-};
+} Configuration;
 
-void checkConfig(const Configuration& config);
+void checkConfig(const Configuration *config);
 uint32_t startAddress;
 uint32_t sizeBytes;
 

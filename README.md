@@ -4,11 +4,11 @@ A physical pentesting toolkit on a regular Raspberry Pi Pico.
 
 ## Intro
 
-You've probably seen other similar tools for other MCU's and SBC's, such as the ESP32 Marauder, ESP8266 Deauther, P4wnP1 A.L.O.A, PocketPhishr, Pwnagotchi, etc. Although these are all very good projects, there hasn't been much talk regarding the Raspberry Pi Pico becoming a good tool in the right hands.
+You've probably seen other similar tools for other MCUs and SBCs, such as the ESP32 Marauder, ESP8266 Deauther, P4wnP1 A.L.O.A, PocketPhishr, Pwnagotchi, etc. Although these are all very good projects, there hasn't been much talk regarding the Raspberry Pi Pico becoming a good tool in the right hands.
 
 The Raspberry Pi Pico is a flexible microcontroller board designed for multiple purposes. With this project, I intend to use make a powerful Keystroke Injection tool for such an intricate board with a special purpose. It is designed to be easy to configure, modify, and use for fun. This will be designed to be a little more than a *Bad USB*. Instead of being a basic, high-level program on a Pico, we build firmware designed for keystroke injection.
 
-### Development progress
+### Development Progress
 
 This [project](https://github.com/users/dj1ch/projects/3) showcases my progress thus far.
 
@@ -18,12 +18,18 @@ This [project](https://github.com/users/dj1ch/projects/3) showcases my progress 
 
 When the code is ready, run the following:
 
+First, we install dependencies.
+
+```bash
+sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib -y
+```
+
 ```bash
 cd pico-key-*/pico-key
 mkdir build
 cd build
 cmake ..
-make
+make pico-key
 ```
 
 ### The attack: explained

@@ -14,10 +14,18 @@ project(pico-key C CXX ASM)
 pico_sdk_init()
 
 # source
-add_executable(pico-key pico-key.c)
-
-# add tinyUSB
-target_include_directories(pico-key PRIVATE ${CMAKE_CURRENT_LIST_DIR}/tinyusb/src)
+add_executable(pico-key 
+    pico-key.c 
+    config.c 
+    duckyscript.c
+    easter-egg.c
+    filesystem.c
+    settings.c
+    stm.c
+    tusb.c
+    uid.c
+    usb.c
+)
 
 # pico sdk libraries
 target_link_libraries(pico-key

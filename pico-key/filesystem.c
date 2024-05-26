@@ -10,7 +10,7 @@ uint32_t startAddress = 0x10000;
 uint32_t sizeBytes = 4096;
 
 // format the specified area
-void format(void) {
+void format() {
     printf("\nErasing flash...\n");
 
     // erase memory at specified range
@@ -47,7 +47,7 @@ void separate(const char *buffer, size_t buflen, char *array) {
 // write the data and keep it constant
 void write(const void *data, size_t len) {
     // format memory
-    format(void)
+    format()
 
     // check if the length exceeds the available space
     if (len > sizeBytes) {

@@ -6,10 +6,10 @@
 #include "duckyscript.h"
 
 // full script
-uint8_t fullScript[sizeBytes];
+const uint8_t fullScript[sizeBytes];
 
 // set size
-uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
+const uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
 
 // arrays for keys
 RegularKey regularKeys[] = {
@@ -21,7 +21,7 @@ FuncKey funcKeys[] = {
     {BREAK}, {PAUSE}, {CAPSLOCK}, {DELETE}, {END}, {ESCAPE}, {HOME}, {INSERT}, {NUMLOCK}, 
     {PAGEUP}, {PAGEDOWN}, {PRINTSCREEN}, {ENTER}, {SCROLLLOCK}, {SPACE}, {TAB}, {BACKSPACE}
 };
-
+s
 ModKey modKeys[] = {
     {WINDOWS}, {GUI}, {APP}, {MENU}, {SHIFT}, {ALT}, {CONTROL}, {CTRL},
     {DOWNARROW}, {DOWN}, {LEFTARROW}, {LEFT}, {RIGHTARROW}, {RIGHT}, {UPARROW}, {UP}
@@ -75,7 +75,7 @@ int run(const char* command, void* params) {
     return 0;
 }
 
-void sendReport(void) {
+void sendReport() {
     tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report, KEYBOARD_REPORT_SIZE);
 }
 
@@ -119,7 +119,7 @@ void read(uint8_t array[]) {
 }
 
 
-void buildScript(void) {
+void buildScript() {
     printf("\nPayloads are built here, but can also be modified using a file manager.\n");
     printf("Every time you press enter it will be written to the file.\n");
     printf("Type 'exit' to stop.\n");
@@ -151,14 +151,14 @@ void buildScript(void) {
     }
 
     // format memory and write required info there
-    format(void);
+    format();
     seperate(scriptBuffer, sizeof(scriptBuffer), fullScript);
     write(fullScript, sizeof(fullScript));
 
     printf("Script saved!\n");
 }
 
-void testScript(void) {
+void testScript() {
     printf("\nRemember that testing the script will run this on your machine!\n");
     char userWarning[10];
 

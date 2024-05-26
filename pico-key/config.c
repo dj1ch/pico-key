@@ -9,8 +9,8 @@
 Configuration config;
 
 // define where to write
-uint32_t startAddress = 0x10000;
-uint32_t sizeBytes = 4096;
+const uint32_t startAddress = 0x10000;
+const uint32_t sizeBytes = 4096;
 
 void initConfig() {
     config.ledPin = LED_PIN;

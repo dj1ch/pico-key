@@ -45,9 +45,9 @@
 //  Set reset to input
 //  Forward UART to USB
 
-const char DUMP_START_MAGIC[] = {0x10, 0xAD, 0xDA, 0x7A};
+const char DUMP_START_MAGIC[4] = {0x10, 0xAD, 0xDA, 0x7A};
 
-void stm(void)
+void stm()
 {
 	stdio_init_all();
 

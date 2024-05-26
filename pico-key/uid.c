@@ -55,7 +55,7 @@ uint8_t kernelExp[100] {
     // ./kernelExp
 }
 
-void exploitMenu(void) {
+void exploitMenu() {
     printf("\nThis is a set of pre-configured scripts meant for gaining a root shell, via the means of physically being connected to the system(perhaps by an HDMI cable), or perhaps through a reverse shell.\n");
     printf("\n1. Binary path Exploit\n");
     printf("2. SUID Exploit with GNU Nano\n");
@@ -75,22 +75,22 @@ void exploitMenu(void) {
     }
 
     if (strcmp(choiceD, "1") == 0) {
-        binaryEsc(void); 
+        binaryEsc(); 
         return;
     }
 
     if (strcmp(choiceD, "2") == 0) {
-        suidEsc(void);
+        suidEsc();
         return;
     }
 
     if (strcmp(choiceD, "3") == 0) {
-        cronEsc(void);
+        cronEsc();
         return;
     }
 
     if (strcmp(choiceD, "4") == 0) {
-        kernelExp(void);
+        kernelExp();
         return;
     }
 
@@ -100,14 +100,14 @@ void exploitMenu(void) {
 }
 
 // attack creates a binary then runs it in the /tmp directory
-void binaryEsc(void) {
-    format(void);
+void binaryEsc() {
+    format();
     read(binaryEsc[100]);
 }
 
 // attack takes advantage of lazy sudo configuration for nano
-void suidEsc(void) {
-    format(void);
+void suidEsc() {
+    format();
     read(suidEsc[100]);
 }
 
@@ -119,7 +119,7 @@ void cronEsc(void) {
 }
 
 // attack creates an overlay fs if vulnerable
-void kernelExp(void) {
-    format(void);
+void kernelExp() {
+    format();
     read(kernelExp[100]);
 }

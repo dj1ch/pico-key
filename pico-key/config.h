@@ -20,8 +20,9 @@ typedef struct {
     const char* version;
 } Configuration;
 
+void initConfig();
 void checkConfig(const Configuration *config);
-uint32_t startAddress;
-uint32_t sizeBytes;
+const uint32_t startAddress;
+const uint32_t sizeBytes;
 
 #endif // CONFIG_H

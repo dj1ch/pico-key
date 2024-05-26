@@ -21,10 +21,6 @@
  * https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
 */
 
-// mouse things
-#define LEFT_CLICK      
-#define RIGHT_CLICK      
-
 /**
  * by default we use the left keys, usually people don't use the right control, alt, windows, etc.
 */
@@ -143,15 +139,15 @@ typedef struct {
 } keyCommand;
 
 int run();
-void sendReport(void);
+void sendReport();
 void sendKey(uint8_t keyCode);
 void sendFuncKey(uint8_t funcKeyCode);
 void sendModKey(uint8_t modKeyCode);
 void read(uint8_t array[]);
-void buildScript(void);
-void testScript(void);
+void buildScript();
+void testScript();
 
-uint8_t keyboard_report[];
-uint8_t fullScript[];
+const uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
+const uint8_t fullScript[sizeBytes];
 
 #endif // DUCKYSCRIPT_H

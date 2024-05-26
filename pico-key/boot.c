@@ -16,10 +16,10 @@ int boot(void) {
     printf("%s\n", author);
 
     // board info
-    boardInfo(void);
+    boardInfo();
 
     // spoof id
-    spoofID(void);
+    spoofID();
 
     if (config.runOnStartup) {
         read(fullScript); // may need to fix that
@@ -29,7 +29,7 @@ int boot(void) {
     }
 }
 
-void boardInfo(void) {
+void boardInfo() {
     // we can only really print memory here
     printf("\nBoard info:\n");
     printf(malloc_stats() + " bytes");

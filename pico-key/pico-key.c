@@ -10,12 +10,12 @@
 
 #include "pico-key.h"
 
-int main(void) {
+int main() {
     // main initialization
     stdio_init_all();
     tusb_init();
 
-    boot(void);
+    boot();
     while (true) {
         printf("\n1. Build Bad USB script\n");
         printf("2. Test Bad USB script\n");
@@ -23,7 +23,7 @@ int main(void) {
         printf("4. STM32F1-Picopwner\n");
         printf("5. Misc\n");
         printf("6. Options\n");
-        sleep(1);
+        sleep_ms(1000);
 
         int choice;
         printf("\n> ");
@@ -31,31 +31,31 @@ int main(void) {
 
         switch (choice) {
             case 1:
-                buildScript(void);
+                buildScript();
                 break;
 
             case 2:
-                testScript(void);
+                testScript();
                 break; 
 
             case 3:
-                fakeUSB(void);
+                fakeUSB();
                 break; 
 
             case 4: 
-                smt(void);
+                stm();
                 break;
 
             case 5:
-                misc(void);
+                misc();
                 break; 
 
             case 6:
-                options(void);
+                options();
                 break;
 
             case 69:
-                specialMessage(void);
+                specialMessage();
                 break;
 
             default: 

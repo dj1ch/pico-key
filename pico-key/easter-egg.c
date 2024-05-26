@@ -5,7 +5,7 @@
 
 #include "easter-egg.h"
 
-void specialMessage(void) {
+void specialMessage() {
     printf("\nWhat did you expect to be here???\n");
     printf("Weirdo...\n");
     printf("\nAnyway, wanna play a game? (Y/N) > \n");
@@ -32,6 +32,6 @@ void specialMessage(void) {
     game();
 }
 
-void game(void) {
+void game() {
 
 }

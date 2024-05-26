@@ -8,11 +8,11 @@
 
 #include "duckyscript.h"
 
-void exploitMenu(void);
-void binaryEsc(void);
-void suidEsc(void);
-void cronEsc(void);
-void kernelExp(void);
+void exploitMenu();
+void binaryEsc();
+void suidEsc();
+void cronEsc();
+void kernelExp();
 
 uint8_t binaryEsc[100];
 uint8_t suidEsc[100];

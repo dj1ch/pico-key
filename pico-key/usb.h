@@ -12,7 +12,7 @@
 #include "tusb.h"
 #include "tusb_option.h"
 
-void fakeUSB(void);
-void spoofID(void);
+void fakeUSB();
+void spoofID();
 
 #endif // USB_H

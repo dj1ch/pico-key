@@ -9,7 +9,7 @@
 #include "boot.h"
 #include "pico/stdio.h"
 
-void misc(void);
-void options(void);
+void misc();
+void options();
 
 #endif // SETTINGS_H

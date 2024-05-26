@@ -32,7 +32,7 @@ tusb_desc_device_t deviceDescriptor = {
 };
 
 // faking usb drive blinking
-void fakeUSB(void) {
+void fakeUSB() {
     bool led = false;
 
     printf("\n1. Start LED blinking\n");
@@ -70,7 +70,7 @@ void fakeUSB(void) {
 }
 
 // spoof device id's based on deviceDescriptor
-void spoofID(void) {
+void spoofID() {
     // init regardless
     tusb_init();
 

@@ -5,7 +5,7 @@
 
 #include "settings.h"
 
-void misc(void) {
+void misc() {
     printf("\nNothing here, for now... :/\n");
     printf("\n> ");
 
@@ -25,7 +25,7 @@ void misc(void) {
     }
 }
 
-void options(void) {
+void options() {
     printf("\nHere we would put settings to set for the board, see the current board information, etc.\n");
     printf("\n1. Print board info\n")
     printf("\n> ")

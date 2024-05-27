@@ -15,6 +15,6 @@
 #include "easter-egg.h"
 #include "pico/stdio.h"
 
-int main();
+extern int main();
 
 #endif // PICO_KEY_H

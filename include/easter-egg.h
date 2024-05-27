@@ -13,7 +13,7 @@
 
 extern char specialChoice[10];
 
-void specialMessage();
-void game();
+extern void specialMessage();
+extern void game();
 
 #endif // EASTER_EGG_H

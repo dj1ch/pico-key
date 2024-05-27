@@ -18,10 +18,6 @@
 // define hid report size
 #define KEYBOARD_REPORT_SIZE 6
 
-#ifndef REPORT_ID_KEYBOARD
-#define REPORT_ID_KEYBOARD 0
-#endif
-
 // must be the same as sizeBytes in config.c
 #define SCRIPT_SIZE 4096
 
@@ -152,9 +148,9 @@ typedef struct {
 
 extern int run();
 
-void sendKey(uint8_t keyCode);
-void sendFuncKey(uint8_t funcKeyCode);
-void sendModKey(uint8_t modKeyCode);
+extern void sendKey(uint8_t keyCode);
+extern void sendFuncKey(uint8_t funcKeyCode);
+extern void sendModKey(uint8_t modKeyCode);
 
 extern void read(uint8_t array[]);
 extern void buildScript();

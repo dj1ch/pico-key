@@ -181,7 +181,7 @@
 #ifdef CFG_TUSB_CONFIG_FILE
   #include CFG_TUSB_CONFIG_FILE
 #else
-  #include "tusb_config.h"
+  #include "common/tusb_config.h"
 #endif
 
 #include "common/tusb_mcu.h"

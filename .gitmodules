@@ -1,3 +1,4 @@
-[submodule "pico-key/pico-sdk"]
-	path = pico-key/pico-sdk
+
+[submodule "lib/pico-sdk"]
+	path = lib/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git

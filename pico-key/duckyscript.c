@@ -6,10 +6,10 @@
 #include "duckyscript.h"
 
 // full script
-const uint8_t fullScript[sizeBytes];
+uint8_t fullScript[SCRIPT_SIZE];
 
 // set size
-const uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
+uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
 
 // arrays for keys
 RegularKey regularKeys[] = {
@@ -21,10 +21,10 @@ FuncKey funcKeys[] = {
     {BREAK}, {PAUSE}, {CAPSLOCK}, {DELETE}, {END}, {ESCAPE}, {HOME}, {INSERT}, {NUMLOCK}, 
     {PAGEUP}, {PAGEDOWN}, {PRINTSCREEN}, {ENTER}, {SCROLLLOCK}, {SPACE}, {TAB}, {BACKSPACE}
 };
-s
+
 ModKey modKeys[] = {
-    {WINDOWS}, {GUI}, {APP}, {MENU}, {SHIFT}, {ALT}, {CONTROL}, {CTRL},
-    {DOWNARROW}, {DOWN}, {LEFTARROW}, {LEFT}, {RIGHTARROW}, {RIGHT}, {UPARROW}, {UP}
+    {WINDOWS}, {SHIFT}, {ALT}, {CONTROL},
+    {DOWNARROW}, {LEFTARROW}, {RIGHTARROW}, {UPARROW}
 };
 
 // run a duckyscript command based on what is in duckyscript.h
@@ -75,32 +75,28 @@ int run(const char* command, void* params) {
     return 0;
 }
 
-void sendReport() {
-    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report, KEYBOARD_REPORT_SIZE);
-}
-
 void sendKey(uint8_t keyCode) {
     // send a regular key
     keyboard_report[0] = 0; // no modifier keys
     keyboard_report[2] = keyCode; // key to press
-    sendReport();
+    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report);
 }
 
 void sendModKey(uint8_t modKeyCode) {
     // send a modifier key
     keyboard_report[0] = modKeyCode; // modifier key code
-    sendReport();
+    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report);
 }
 
 void sendFuncKey(uint8_t funcKeyCode) {
     // send a function key
     keyboard_report[0] = 0; // no modifier keys
     keyboard_report[2] = funcKeyCode; // function key code
-    sendReport();
+    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report);
 }
 
 // crap i gotta build a new compiler for this :/
-void read(uint8_t array[]) {
+void read(uint8_t *array) {
     char* token;
     char* rest = array;
     const char commas[] = ",";
@@ -111,7 +107,7 @@ void read(uint8_t array[]) {
         char* param = strtok(NULL, "\n");
 
         if (strcmp(command, "regular") == 0 || strcmp(command, "modifier") == 0 || strcmp(command, "function") == 0) {
-            run(command);
+            run(command, 0);
         } else {
             printf("Unknown command: %s\n", command);
         }

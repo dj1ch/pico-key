@@ -11,9 +11,16 @@
 #include "pico/stdio.h"
 #include "tusb.h"
 #include "tusb_option.h"
+#include <ctype.h>
+#include <string.h>
+#include <stdio.h>
 
 // define hid report size
 #define KEYBOARD_REPORT_SIZE 8
+
+#ifndef REPORT_ID_KEYBOARD
+#define REPORT_ID_KEYBOARD 0
+#endif
 
 // must be the same as sizeBytes in config.c
 #define SCRIPT_SIZE 4096
@@ -45,7 +52,7 @@
 #define CAPSLOCK        
 #define DELETE          
 #define END             
-#define ESC             
+#define ESCAPE             
 #define HOME            
 #define INSERT          
 #define NUMLOCK         
@@ -55,7 +62,9 @@
 #define ENTER           
 #define SCROLLLOCK      
 #define SPACE           
-#define TAB             
+#define TAB
+#define BREAK
+#define PAUSE             
 
 // abc's
 #define A               
@@ -142,7 +151,6 @@ typedef struct {
 } keyCommand;
 
 int run();
-void sendReport();
 void sendKey(uint8_t keyCode);
 void sendFuncKey(uint8_t funcKeyCode);
 void sendModKey(uint8_t modKeyCode);
@@ -150,7 +158,7 @@ void read(uint8_t array[]);
 void buildScript();
 void testScript();
 
-const uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
-const uint8_t fullScript[SCRIPT_SIZE];
+uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
+uint8_t fullScript[SCRIPT_SIZE];
 
 #endif // DUCKYSCRIPT_H

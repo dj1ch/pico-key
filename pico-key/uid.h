@@ -14,9 +14,9 @@ void suidEsc();
 void cronEsc();
 void kernelExp();
 
-uint8_t binaryEsc[100];
-uint8_t suidEsc[100];
-uint8_t cronEsc[100];
-uint8_t kernelExp[100];
+uint8_t binaryEscScript[100];
+uint8_t suidEscScript[100];
+uint8_t cronEscScript[100];
+uint8_t kernelExpScript[100];
 
 #endif // UID_H

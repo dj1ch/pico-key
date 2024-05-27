@@ -8,11 +8,12 @@
 
 #include "config.h"
 #include "pico/stdio.h"
+#include "pico/stdlib.h"
 #include "hardware/gpio.h"
 #include "tusb.h"
 #include "tusb_option.h"
 
-void fakeUSB();
-void spoofID();
+extern void fakeUSB();
+extern void spoofID();
 
 #endif // USB_H

@@ -39,8 +39,6 @@ int run(const char* command, void* params) {
         keyboard_report[3] = 0; // reserved
         keyboard_report[4] = 0; // reserved
         keyboard_report[5] = 0; // reserved
-        keyboard_report[6] = 0; // reserved
-        keyboard_report[7] = 0; // reserved
     } else if (strcmp(command, "modifier") == 0) {
         ModKey* modKey = (ModKey*)params;
         // send modifier key
@@ -50,8 +48,6 @@ int run(const char* command, void* params) {
         keyboard_report[3] = 0; // reserved
         keyboard_report[4] = 0; // reserved
         keyboard_report[5] = 0; // reserved
-        keyboard_report[6] = 0; // reserved
-        keyboard_report[7] = 0; // reserved
     } else if (strcmp(command, "function") == 0) {
         FuncKey* funcKey = (FuncKey*)params;
         // send function key
@@ -61,8 +57,6 @@ int run(const char* command, void* params) {
         keyboard_report[3] = 0; // reserved
         keyboard_report[4] = 0; // reserved
         keyboard_report[5] = 0; // reserved
-        keyboard_report[6] = 0; // reserved
-        keyboard_report[7] = 0; // reserved
     }
 
     printf("\nStarting attack!\n");
@@ -79,13 +73,13 @@ void sendKey(uint8_t keyCode) {
     // send a regular key
     keyboard_report[0] = 0; // no modifier keys
     keyboard_report[2] = keyCode; // key to press
-    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report);
+    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyCode);
 }
 
 void sendModKey(uint8_t modKeyCode) {
     // send a modifier key
     keyboard_report[0] = modKeyCode; // modifier key code
-    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, 0, keyboard_report);
+    tud_hid_keyboard_report(REPORT_ID_KEYBOARD, modKeyCode, 0);
 }
 
 void sendFuncKey(uint8_t funcKeyCode) {

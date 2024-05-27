@@ -12,7 +12,7 @@
 #include "pico/stdio.h"
 #include "pico/malloc.h"
 
-int boot();
-void boardInfo();
+extern int boot();
+extern void boardInfo();
 
 #endif // BOOT_H

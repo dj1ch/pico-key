@@ -11,7 +11,7 @@
 #include <string.h>
 #include <ctype.h>
 
-char* specialChoice[10];
+extern char specialChoice[10];
 
 void specialMessage();
 void game();

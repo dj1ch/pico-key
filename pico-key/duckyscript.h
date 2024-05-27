@@ -16,7 +16,7 @@
 #include <stdio.h>
 
 // define hid report size
-#define KEYBOARD_REPORT_SIZE 8
+#define KEYBOARD_REPORT_SIZE 6
 
 #ifndef REPORT_ID_KEYBOARD
 #define REPORT_ID_KEYBOARD 0
@@ -150,15 +150,17 @@ typedef struct {
     char key;
 } keyCommand;
 
-int run();
+extern int run();
+
 void sendKey(uint8_t keyCode);
 void sendFuncKey(uint8_t funcKeyCode);
 void sendModKey(uint8_t modKeyCode);
-void read(uint8_t array[]);
-void buildScript();
-void testScript();
 
-uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
-uint8_t fullScript[SCRIPT_SIZE];
+extern void read(uint8_t array[]);
+extern void buildScript();
+extern void testScript();
+
+extern uint8_t keyboard_report[KEYBOARD_REPORT_SIZE];
+extern uint8_t fullScript[SCRIPT_SIZE];
 
 #endif // DUCKYSCRIPT_H

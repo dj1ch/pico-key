@@ -13,8 +13,8 @@
 #include "hardware/irq.h"
 #include "hardware/sync.h"
 
-void format();
-void seperate(const char *buffer, size_t buflen, char *array);
-void write(const void *data, size_t len);
+extern void format();
+extern void seperate(const char *buffer, size_t buflen, char *array);
+extern void write(const void *data, size_t len);
 
 #endif // FILESYSTEM_H

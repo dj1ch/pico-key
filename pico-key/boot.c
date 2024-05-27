@@ -5,7 +5,7 @@
 
 #include "boot.h"
 
-int boot(void) {
+int boot() {
     // boot logo
     char coolArt[] = "pico-key...";
     char author[] = "by dj1ch";

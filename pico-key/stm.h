@@ -29,6 +29,7 @@
 #define UART_STALLS_FOR_LED_OFF 10000
 
 void stm();
-const char DUMP_START_MAGIC[4];
+
+extern const char DUMP_START_MAGIC[4];
 
 #endif // STM_H

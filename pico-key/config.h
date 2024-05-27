@@ -23,8 +23,9 @@ typedef struct {
 } Configuration;
 
 void initConfig();
-void checkConfig(const Configuration *config);
-const uint32_t startAddress;
-const uint32_t sizeBytes;
+extern void checkConfig(const Configuration *config);
+
+extern const uint32_t startAddress;
+extern const uint32_t sizeBytes;
 
 #endif // CONFIG_H

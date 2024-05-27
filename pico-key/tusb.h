@@ -123,10 +123,10 @@
 // Initialize device/host stack
 // Note: when using with RTOS, this should be called after scheduler/kernel is started.
 // Otherwise it could cause kernel issue since USB IRQ handler does use RTOS queue API.
-bool tusb_init(void);
+extern bool tusb_init(void);
 
 // Check if stack is initialized
-bool tusb_inited(void);
+extern bool tusb_inited(void);
 
 // TODO
 // bool tusb_teardown(void);

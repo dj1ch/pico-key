@@ -8,6 +8,7 @@
 
 #include "pico/stdio.h"
 #include <stdio.h>
+#include <stdint.h>
 
 // default config params
 #define LED_PIN PICO_DEFAULT_LED_PIN
@@ -15,10 +16,10 @@
 
 // configuration structure
 typedef struct {
-    char ledPin;
+    int ledPin;
     uint32_t payloadLocation;
     bool runOnStartup;
-    char version;
+    char *version;
 } Configuration;
 
 void initConfig();

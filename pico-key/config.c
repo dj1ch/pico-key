@@ -22,7 +22,7 @@ void initConfig() {
 void checkConfig(const Configuration *config) {
     printf("\nCurrent Config: \n");
     printf("LED Pin definition: %d\n", config->ledPin);
-    printf("Payload location: %s\n", config->payloadLocation);
+    printf("Payload location: 0x%08X\n", config->payloadLocation);
     printf("Run on startup: %s\n", config->runOnStartup ? "true" : "false");
     printf("Current version: %s\n", config->version);
 }

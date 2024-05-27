@@ -26,8 +26,8 @@
 #ifndef USBD_PVT_H_
 #define USBD_PVT_H_
 
-#include "osal/osal.h"
-#include "common/tusb_fifo.h"
+#include "../osal/osal.h"
+#include "../common/tusb_fifo.h"
 
 #ifdef __cplusplus
  extern "C" {

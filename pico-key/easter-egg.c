@@ -1,5 +1,5 @@
 /**
- * egg.c
+ * easter-egg.c
  * maybe this is an easter egg ;)
 */
 
@@ -10,7 +10,7 @@ void specialMessage() {
     printf("Weirdo...\n");
     printf("\nAnyway, wanna play a game? (Y/N) > \n");
 
-    char* specialChoice[10];
+    char specialChoice[10];
 
     fgets(specialChoice, sizeof(specialChoice), stdin);
     specialChoice[strcspn(specialChoice, "\n")] = '\0';
@@ -20,16 +20,12 @@ void specialMessage() {
     }
 
     if (strcmp(specialChoice, "Y") == 0) {
-        continue;
+        game();
     } else if (strcmp(specialChoice, "N") == 0) {
-        break;
+        printf("Okay, maybe next time.\n");
     } else {
         printf("%s: Not a valid response\n", specialChoice);
-        continue;
     }
-
-    // cool game
-    game();
 }
 
 void game() {

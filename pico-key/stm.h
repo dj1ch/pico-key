@@ -10,6 +10,7 @@
 #include "pico/stdlib.h"
 #include "hardware/uart.h"
 #include "hardware/pwm.h"
+#include <stdio.h>
 
 #define LED_PIN PICO_DEFAULT_LED_PIN
 

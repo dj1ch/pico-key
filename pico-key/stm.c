@@ -53,7 +53,7 @@ void stm()
 
 	// Prevent interpreting 0x0A as newline (0x0D 0x0A) instead of binary data
 	// This will spare you a headache when dealing with putchar()
-	stdio_set_translate_crlf(&stdio_usb, false);
+	stdio_set_translate_crlf(&stdio_uart, false);
 
 	// Init UART
 	uart_init(UART_ID, UART_BAUD);
@@ -166,20 +166,19 @@ void stm()
 
 	// Forward dumped data from UART to USB serial
 	uint stalls = 0;
-	while (true)
+    while (true) 
 	{
-		if (uart_is_readable(UART_ID))
+        if (uart_is_readable(UART_ID)) 
 		{
-			char c = uart_getc(UART_ID);
-			putchar(c);
-			pwm_set_gpio_level(LED_PIN, c); // LED will change intensity based on UART data
-			stalls = 0;
-		}
-		else
+            char c = uart_getc(UART_ID);
+            putchar(c);
+            pwm_set_gpio_level(LED_PIN, c); // LED will change intensity based on UART data
+            stalls = 0;
+        } else 
 		{
-			// If no data is received for a while, turn off the LED
-			if (++stalls == UART_STALLS_FOR_LED_OFF)
-				pwm_set_gpio_level(LED_PIN, 0);
-		}
-	}
+            // If no data is received for a while, turn off the LED
+            if (++stalls == UART_STALLS_FOR_LED_OFF)
+                pwm_set_gpio_level(LED_PIN, 0);
+        }
+    }
 }

@@ -1,3 +1,11 @@
+# ⚠️ Project Archived
+
+> [!WARNING]
+> I will no longer continue development due to a lack of maintenance and time. Use at your own risk, any issue made will not be acknowledged. However, I may return to this project, although this is unlikely.
+
+<details>
+<summary>Old README.md</summary>
+
 # pico-key
 
 A physical pentesting toolkit on a regular Raspberry Pi Pico.
@@ -83,3 +91,5 @@ It's pretty bare bones right now, it has a work-in-progress text editor, to buil
 TBA will add contributing guidelines soon
 
 **Made with :heart: by [@dj1ch](https://github.com/dj1ch)**
+
+</details>

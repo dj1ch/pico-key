@@ -1,20 +1,20 @@
 /**
  * pico-key.h
- * main header for main stuff
+ * main class header
 */
 
 #ifndef PICO_KEY_H
 #define PICO_KEY_H
 
-#include "stm.h"
-#include "usb.h"
-#include "settings.h"
-#include "config.h"
-#include "boot.h"
-#include "duckyscript.h"
-#include "easter-egg.h"
-#include "pico/stdio.h"
+class pico_key {
+public:
+    pico_key();
+    ~pico_key();
 
-extern int main();
+    void boot();
+    void info();
+private:
+
+};
 
 #endif // PICO_KEY_H

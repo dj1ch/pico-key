@@ -1,31 +1,25 @@
-/** 
+/**
  * config.h
- * configurations are defined here
+ * configuration header
 */
 
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "pico/stdio.h"
-#include <stdio.h>
+#include <iostream>
 #include <stdint.h>
 
-// default config params
-#define LED_PIN PICO_DEFAULT_LED_PIN
-#define DEFAULT_RUN_ON_STARTUP true
+class config {
+public:
+    config(int led, uint32_t location, bool run, char* version);
+    ~config(int led, uint32_t location, bool run, char* version);
 
-// configuration structure
-typedef struct {
-    int ledPin;
-    uint32_t payloadLocation;
-    bool runOnStartup;
-    char *version;
-} Configuration;
-
-void initConfig();
-extern void checkConfig(const Configuration *config);
-
-extern const uint32_t startAddress;
-extern const uint32_t sizeBytes;
+    void print_config();
+private:
+    int default_led;
+    uint32_t payload_location;
+    bool run_on_startup;
+    char* version;
+};
 
 #endif // CONFIG_H

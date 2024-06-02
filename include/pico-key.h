@@ -8,9 +8,7 @@
 
 class pico_key {
 public:
-    pico_key();
-    ~pico_key();
-
+    int main();
     void boot();
     void info();
 private:

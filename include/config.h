@@ -15,11 +15,15 @@ public:
     ~config(int led, uint32_t location, bool run, char* version);
 
     void print_config();
-private:
+
     int default_led;
     uint32_t payload_location;
+    uint32_t size_bytes;
     bool run_on_startup;
     char* version;
+
+private:
+
 };
 
 #endif // CONFIG_H

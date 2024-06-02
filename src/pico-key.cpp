@@ -5,12 +5,8 @@
 
 #include "../include/pico-key.h"
 
-pico_key::pico_key() {
-
-}
-
-pico_key::~pico_key() {
-
+int pico_key::main() {
+    
 }
 
 void pico_key::boot() {

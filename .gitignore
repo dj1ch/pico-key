@@ -2,7 +2,4 @@
 .vscode
 
 # build 
-/pico-key/build
-
-# tests
-/tests/basic-keystroke-injection/build/*
+/build

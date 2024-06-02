@@ -1,7 +1,7 @@
-# ⚠️ Project Archived
+# ⚠️ Project Archived...
 
 > [!WARNING]
-> I will no longer continue development due to a lack of maintenance and time. Use at your own risk, any issue made will not be acknowledged. However, I may return to this project, although this is unlikely.
+> I will no longer continue development due to a lack of maintenance and time. Use at your own risk, any issue made will not be acknowledged. However, this project is currently being rewritten currently.
 
 <details>
 <summary>Old README.md</summary>

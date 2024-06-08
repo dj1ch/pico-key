@@ -7,13 +7,14 @@
 #define SETTINGS_H
 
 #include "../include/pico-key.h"
-#include <iostream>
 #include "pico/stdio.h"
+#include <iostream>
 
 class settings {
 public:
-    void misc();
-    void options();
+  void misc();
+  void options();
+
 private:
 };
 

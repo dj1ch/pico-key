@@ -14,16 +14,12 @@
 
 class uid {
 public:
-
 private:
-
 };
 
 class stm {
 public:
-
 private:
-
 };
 
 #endif // SCRIPTS_H

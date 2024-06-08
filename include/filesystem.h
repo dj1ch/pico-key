@@ -7,6 +7,13 @@
 #define FILESYSTEM_H
 
 #include "config.h"
+
+#include "pico/stdio.h"
+#include "pico/stdlib.h"
+#include "hardware/flash.h"
+#include "hardware/irq.h"
+#include "hardware/sync.h"
+
 #include <iostream>
 
 class filesystem {

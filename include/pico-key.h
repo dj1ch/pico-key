@@ -6,6 +6,7 @@
 #ifndef PICO_KEY_H
 #define PICO_KEY_H
 
+#include <iostream>
 class pico_key {
 public:
     int main();

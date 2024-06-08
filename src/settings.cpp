@@ -21,7 +21,7 @@ void settings::misc() {
     }
 
     if (strcmp(choiceB, "EXIT") == 0) {
-        return; 
+        return;
     }
 }
 
@@ -31,7 +31,7 @@ void settings::options() {
     std::cout << "\n> ";
 
     char choiceC[10];
-    
+
     // remove whitespace
     fgets(choiceC, sizeof(choiceC), stdin);
     choiceC[strcspn(choiceC, "\n")] = '\0';
@@ -42,10 +42,10 @@ void settings::options() {
     }
 
     if (strcmp(choiceC, "EXIT") == 0) {
-        return; 
+        return;
     }
 
     if (strcmp(choiceC, "1") == 0) {
-        pico_key::info(); 
+        pico_key::info();
     }
 }

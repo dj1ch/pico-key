@@ -30,5 +30,5 @@ void ducky::send_func_key(uint8_t func_key_code) {
 }
 
 void ducky::send_mod_key(uint8_t mod_key_code) {
-    
+
 }
